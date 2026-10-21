@@ -82,8 +82,9 @@ author:
 publication_category:
   books:
     title: 'Books'
-  manuscripts:
+  manuscripts1:
     title: 'Full-length articles published in journals'
+  manuscripts2:
     title: 'Full papers published in conference proceedings'
   conferences:
     title: 'Abstracts published in conference proceedings'
