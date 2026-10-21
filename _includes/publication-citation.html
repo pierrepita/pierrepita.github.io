@@ -1,0 +1,38 @@
+{% assign publication = include.publication %}
+{% if publication.citation and publication.citation != empty %}
+  <details class="publication-citation" style="margin: 0.75em 0;">
+    <summary style="cursor: pointer; font-weight: 600;">Show citation</summary>
+    <p class="publication-citation__text" style="margin-top: 0.6em; font-size: 0.9em;">
+      {%- assign citation_segments = publication.citation | split: ';' -%}
+      {%- for segment in citation_segments -%}
+        {%- assign citation_segment = segment | lstrip -%}
+        {%- assign author_highlighted = false -%}
+        {%- for name in site.data.publication_author.names -%}
+          {%- assign name_length = name | size -%}
+          {%- assign candidate = citation_segment | slice: 0, name_length -%}
+          {%- assign candidate_upper = candidate | upcase -%}
+          {%- assign name_upper = name | upcase -%}
+          {%- if candidate_upper == name_upper -%}
+            {%- assign next_character = citation_segment | slice: name_length, 1 | default: '' -%}
+            {%- if next_character == '' or next_character == ' ' or next_character == '.' or next_character == ',' or next_character == '(' -%}
+              {%- capture highlighted_name -%}<strong class="publication-author">{{ candidate }}</strong>{%- endcapture -%}
+              {{ segment | replace_first: candidate, highlighted_name }}
+              {%- assign author_highlighted = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- unless author_highlighted -%}{{ segment }}{%- endunless -%}
+        {%- unless forloop.last -%}{{ ';' }}{%- endunless -%}
+      {%- endfor -%}
+    </p>
+  </details>
+{% endif %}
+
+{% if publication.paperurl or publication.slidesurl or publication.bibtexurl %}
+  <p class="publication-resources">
+    {% if publication.paperurl %}<a href="{{ publication.paperurl | escape_once }}">Download Paper</a>{% endif %}
+    {% if publication.slidesurl %}{% if publication.paperurl %} | {% endif %}<a href="{{ publication.slidesurl | escape_once }}">Download Slides</a>{% endif %}
+    {% if publication.bibtexurl %}{% if publication.paperurl or publication.slidesurl %} | {% endif %}<a href="{{ publication.bibtexurl | escape_once }}">Download Bibtex</a>{% endif %}
+  </p>
+{% endif %}
