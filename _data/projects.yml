@@ -1,0 +1,217 @@
+# Papéis: coordinator, vice_coordinator, member, pillar_deputy.
+# funding_brl: valor como texto brasileiro, entre aspas, sem R$; null quando desconhecido.
+- id: inovar-pessoas-pretas
+  title: Inovar para pessoas pretas
+  role: vice_coordinator
+  funders:
+  - Nubank
+  funding_brl: 1.430.850,86
+  summary_pt: Desenvolver soluções de inovação social e computacional que ampliem as oportunidades de pessoas negras,
+    empreendedores e trabalhadores informais, com pesquisa em engenharia de software, inteligência artificial e
+    ciência de dados.
+  summary_en: Develop social and computational innovations that expand opportunities for Black people, entrepreneurs
+    and informal workers through research in software engineering, artificial intelligence and data science.
+  funding_note_pt: 'Convênio nº 364/2022, em parceria com UFBA e IFBA. Gestão administrativa e financeira: FAPEX.'
+  funding_note_en: 'Agreement no. 364/2022, in partnership with UFBA and IFBA. Administrative and financial management:
+    FAPEX.'
+  start_year: 2023
+  end_year: 2024
+  status: completed
+  checked_on: '2026-10-22'
+- id: si2
+  title: SI2 — Instituto de Ciência, Tecnologia e Inovação para o Desenvolvimento de Sistemas Seguros, Inteligentes
+    e Intensivos em Dados
+  role: member
+  funders:
+  - FAPESB / SECTI
+  funding_brl: 1.635.884,00
+  summary_pt: Promover pesquisa, desenvolvimento e inovação em engenharia de sistemas, estabelecendo métodos e tecnologias
+    para construir sistemas seguros, inteligentes e intensivos em dados.
+  summary_en: Advance research, development and innovation in systems engineering, establishing methods and technologies
+    for secure, intelligent and data-intensive systems.
+  start_year: 2023
+  end_year: null
+  status: ongoing
+  checked_on: '2026-10-22'
+- id: digger
+  title: 'DIGGER: um modelo de aprendizado de máquina em português com a finalidade de auxiliar o cidadão em processos
+    do Judiciário'
+  role: vice_coordinator
+  funders:
+  - FAPESB / SECTI
+  funding_brl: 226.000,00
+  summary_pt: Desenvolver um modelo de aprendizado de máquina para português que auxilie cidadãos na análise de
+    processos judiciais, com foco nas demandas de defesa do consumidor.
+  summary_en: Develop a machine-learning model for Portuguese to help citizens analyse judicial proceedings, focusing
+    on consumer-protection cases.
+  start_year: 2023
+  end_year: null
+  status: ongoing
+  checked_on: '2026-10-22'
+- id: agrupamento-dados-mistos
+  title: Identificando grupos interpretáveis em grandes volumes de dados mistos para suportar aplicações científicas
+    com estudo de caso em record linkage
+  role: coordinator
+  funders:
+  - Universidade Federal da Bahia (UFBA)
+  funding_brl: null
+  summary_pt: Desenvolver um método eficiente e interpretável de agrupamento de grandes volumes de dados numéricos,
+    categóricos e textuais, com aplicação à indexação em tarefas de record linkage.
+  summary_en: Develop an efficient, interpretable clustering method for large volumes of numerical, categorical
+    and textual data, with an application to indexing for record linkage.
+  start_year: 2022
+  end_year: 2023
+  status: completed
+  checked_on: '2026-10-22'
+- id: sedhi
+  title: SEDHI — Unidade de Pesquisa em Saúde Global sobre Determinantes Sociais e Ambientais das Desigualdades
+    em Saúde
+  role: pillar_deputy
+  funders:
+  - National Institute for Health and Care Research (NIHR)
+  funding_brl: null
+  summary_pt: Investigar os efeitos de políticas sociais e ambientais sobre a saúde e suas desigualdades no Brasil
+    e no Equador, integrando grandes bases de dados e desenvolvendo métodos de análise em escala.
+  summary_en: Investigate how social and environmental policies affect health and health inequalities in Brazil
+    and Ecuador by linking large datasets and developing large-scale analytical methods.
+  start_year: 2022
+  end_year: null
+  status: ongoing
+  checked_on: '2026-10-22'
+- id: mind-the-gap
+  title: “Mind the gap” — identificando perfis de pobreza familiar e projetando cenários para superação do hiato
+    de pobreza infantil nos anos pós-pandemia
+  role: member
+  funders:
+  - Bill & Melinda Gates Foundation
+  - Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)
+  - Fundação de Amparo à Pesquisa do Estado da Bahia (FAPESB)
+  funding_brl: null
+  summary_pt: Identificar perfis de pobreza de famílias com crianças menores de cinco anos e estimar cenários de
+    renda, custo de vida e mortalidade infantil para apoiar a superação da pobreza no pós-pandemia.
+  summary_en: Identify poverty profiles among families with children under five and estimate income, living-cost
+    and child-mortality scenarios to support policies addressing post-pandemic poverty.
+  start_year: 2020
+  end_year: null
+  status: ongoing
+  checked_on: '2026-10-22'
+- id: personalised-risk-models
+  title: Design and validation of personalised risk prediction models over Brazilian health care data
+  role: member
+  funders:
+  - Royal Society
+  funding_brl: null
+  summary_pt: Desenvolver, adaptar e validar modelos personalizados de predição de risco com dados de saúde brasileiros,
+    apoiando a detecção precoce de doenças e a orientação de tratamentos.
+  summary_en: Develop, adapt and validate personalised risk-prediction models using Brazilian health data to support
+    early disease detection and treatment decisions.
+  start_year: 2019
+  end_year: 2021
+  status: completed
+  checked_on: '2026-10-22'
+- id: sifilis-politicas-sociais
+  title: Avaliar os determinantes e impacto direto e indireto de políticas sociais da sífilis gestacional e seus
+    efeitos adversos sobre o concepto — Brasil, 2001–2018
+  role: member
+  funders:
+  - Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)
+  funding_brl: null
+  summary_pt: Avaliar os determinantes da sífilis gestacional e congênita e os efeitos de políticas sociais, especialmente
+    o Bolsa Família, sobre a ocorrência da doença e os desfechos de saúde das crianças.
+  summary_en: Assess the determinants of gestational and congenital syphilis and the effects of social policies,
+    particularly Bolsa Família, on disease occurrence and child health outcomes.
+  start_year: 2019
+  end_year: 2021
+  status: completed
+  checked_on: '2026-10-22'
+- id: ai-covid
+  title: AI as service for tackling the Covid-19 in Brazil
+  role: member
+  funders:
+  - Google
+  funding_brl: null
+  summary_pt: Estabelecer uma plataforma de inteligência artificial em nuvem para integrar dados, produzir modelos
+    preditivos e sintetizar evidências, apoiando as pesquisas e decisões da Rede CoVida sobre a Covid-19 no Brasil.
+  summary_en: Establish a cloud-based AI platform for data integration, predictive modelling and evidence synthesis
+    to support Rede CoVida research and decisions on Covid-19 in Brazil.
+  start_year: 2019
+  end_year: 2020
+  status: completed
+  checked_on: '2026-10-22'
+- id: mecfs-stratification
+  title: Stratification of patients suffering from myalgic encephalomyelitis/chronic fatigue syndrome
+  role: member
+  funders:
+  - UK Biobank
+  funding_brl: null
+  summary_pt: Identificar subgrupos de pacientes com encefalomielite miálgica/síndrome de fadiga crônica por meio
+    de técnicas estatísticas e aprendizado de máquina, contribuindo para compreender a doença e personalizar tratamentos.
+  summary_en: Identify subgroups of patients with myalgic encephalomyelitis/chronic fatigue syndrome using statistical
+    and machine-learning methods to improve disease understanding and treatment personalisation.
+  funding_note_pt: Participação do UK Biobank registrada como cooperação; não há valor financeiro informado.
+  funding_note_en: UK Biobank participation is recorded as cooperation; no financial amount is reported.
+  start_year: 2018
+  end_year: 2019
+  status: completed
+  checked_on: '2026-10-22'
+- id: 100-million-cohort
+  title: The 100 million Brazilian cohort
+  role: member
+  funders:
+  - Wellcome Trust
+  funding_brl: null
+  summary_pt: Construir uma coorte populacional por vinculação de dados de programas sociais e sistemas de saúde
+    para avaliar determinantes sociais e os efeitos de políticas de proteção social sobre a saúde no Brasil.
+  summary_en: Build a population cohort by linking social-programme and health-system data to evaluate social determinants
+    and the effects of social-protection policies on health in Brazil.
+  start_year: 2015
+  end_year: 2019
+  status: completed
+  checked_on: '2026-10-22'
+- id: bambu
+  title: 'BAMBU: rede metropolitana para experimentação e inovação da Internet do Futuro'
+  role: member
+  funders:
+  - Fundação de Amparo à Pesquisa do Estado da Bahia (FAPESB)
+  funding_brl: 801.357,69
+  summary_pt: Implantar uma rede metropolitana programável para experimentar novos protocolos e serviços da Internet,
+    conectando pesquisadores da Bahia a ambientes nacionais e internacionais de experimentação.
+  summary_en: Deploy a programmable metropolitan network for experimentation with Internet protocols and services,
+    connecting researchers in Bahia to national and international testbeds.
+  funding_note_pt: Valor aprovado no Edital FAPESB TIC nº 013/2015, pedido 4934/2015.
+  funding_note_en: Amount approved under FAPESB TIC call no. 013/2015, application 4934/2015.
+  start_year: 2015
+  end_year: 2017
+  status: completed
+  checked_on: '2026-10-22'
+- id: data-lake
+  title: Desenvolvimento de um repositório de dados científicos (Data Lake) para aplicações Big Data
+  role: member
+  funders:
+  - Fundação de Amparo à Pesquisa do Estado da Bahia (FAPESB)
+  funding_brl: 51.100,00
+  summary_pt: Desenvolver um repositório de dados científicos que preserve os formatos originais dos dados e utilize
+    metadados para apoiar seu armazenamento, recuperação e uso em aplicações de Big Data.
+  summary_en: Develop a scientific-data repository that preserves original data formats and uses metadata to support
+    storage, retrieval and reuse in Big Data applications.
+  funding_note_pt: Valor do Termo de Outorga FAPESB JCB0042/2016, informado na transparência de setembro de 2019.
+  funding_note_en: Amount of FAPESB grant JCB0042/2016, reported in the September 2019 transparency statement.
+  start_year: 2015
+  end_year: 2017
+  status: completed
+  checked_on: '2026-10-22'
+- id: data-intensive-health
+  title: Suporte à execução de aplicações intensivas de dados com estudo de caso na área da Saúde
+  role: member
+  funders:
+  - Universidade Federal da Bahia (UFBA)
+  - Fundação de Amparo à Pesquisa do Estado da Bahia (FAPESB)
+  funding_brl: null
+  summary_pt: Desenvolver e avaliar algoritmos probabilísticos de vinculação de bases governamentais e uma infraestrutura
+    de integração baseada em Spark, apoiando pesquisas epidemiológicas e de saúde pública.
+  summary_en: Develop and evaluate probabilistic linkage algorithms for government datasets and a Spark-based integration
+    infrastructure to support epidemiological and public-health research.
+  start_year: 2014
+  end_year: 2015
+  status: completed
+  checked_on: '2026-10-22'

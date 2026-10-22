@@ -20,8 +20,8 @@ main:
   - title: "Supervision"
     url: /supervision/
 
-  - title: "Portfolio"
-    url: /portfolio/
+  - title: "Projects"
+    url: /projects/
         
   - title: "Blog Posts"
     url: /year-archive/
@@ -34,4 +34,5 @@ main:
     
   #- title: "Guide"
   #  url: /markdown/
+
 
