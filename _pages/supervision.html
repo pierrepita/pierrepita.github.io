@@ -22,60 +22,58 @@ supervision_categories:
 - key: postdoc
   pt: Pós-doc
   en: Postdoctoral
-# Foto: envie o arquivo para images/ e use avatar: "/images/nome-do-arquivo.jpg".
-# Links pessoais pesquisados; campos vazios podem ser preenchidos depois.
 supervision_profiles:
 - id: andre-luis-dos-santos
   name: Andre Luis dos Santos
-  avatar: ''
+  avatar: /images/andre-luis.png
   lattes_url: ''
   linkedin_url: ''
   initials: AS
 - id: bruno-oliveira-sales
   name: Bruno Oliveira Sales
-  avatar: ''
+  avatar: /images/bruno-sales.png
   lattes_url: ''
   linkedin_url: ''
   initials: BS
 - id: carlos-jose-cardoso-dos-santos
   name: Carlos José Cardoso dos Santos
-  avatar: ''
+  avatar: /images/carlos-santos.png
   lattes_url: https://lattes.cnpq.br/0403351730668323
   linkedin_url: https://br.linkedin.com/in/cajoca-carloscardoso
   initials: CS
 - id: diego-quadros-dos-santos-dias
   name: Diego Quadros dos Santos Dias
-  avatar: ''
+  avatar: /images/diego-dias.png
   lattes_url: ''
   linkedin_url: https://br.linkedin.com/in/diego-quadros-dos-santos-dias-7ab59a259
   initials: DD
 - id: eliel-batista-santos
   name: Eliel Batista Santos
-  avatar: ''
+  avatar: /images/eliel-santos.png
   lattes_url: ''
   linkedin_url: https://br.linkedin.com/in/eliel-batista-santos
   initials: ES
 - id: flavio-santos-conterato
   name: Flávio Santos Conterato
-  avatar: ''
+  avatar: /images/flavio-conterato.png
   lattes_url: https://lattes.cnpq.br/6243445332422451
   linkedin_url: https://br.linkedin.com/in/flavioconterato
   initials: FC
 - id: gabriel-fernandes-rocha
   name: Gabriel Fernandes Rocha
-  avatar: ''
+  avatar: /images/gabriel-rocha.png
   lattes_url: https://lattes.cnpq.br/2197536435354474
   linkedin_url: https://br.linkedin.com/in/gabrielfernandesrocha/en
   initials: GR
 - id: guilherme-waldschmidt-pereira
   name: Guilherme Waldschmidt Pereira
-  avatar: ''
+  avatar: /images/guilherme-pereira.png
   lattes_url: https://lattes.cnpq.br/0808347579761531
   linkedin_url: https://br.linkedin.com/in/guilherme-waldschmidt-pereira
   initials: GP
 - id: iago-pinto-do-espirito-santo
   name: Iago Pinto do Espirito Santo
-  avatar: ''
+  avatar: /images/iago-santo.png
   lattes_url: ''
   linkedin_url: ''
   initials: IS
@@ -87,13 +85,13 @@ supervision_profiles:
   initials: JS
 - id: joao-gabriel-zeba-de-souza
   name: Joao Gabriel Zeba de Souza
-  avatar: ''
+  avatar: /images/joao-zeba.png
   lattes_url: ''
   linkedin_url: https://br.linkedin.com/in/joaogzeba
   initials: JS
 - id: jose-augusto-duarte-gomes
   name: José Augusto Duarte Gomes
-  avatar: ''
+  avatar: /images/jose-augusto.png
   lattes_url: https://lattes.cnpq.br/0905012896965642
   linkedin_url: https://br.linkedin.com/in/joseaugustoduarte7
   initials: JG
@@ -111,61 +109,61 @@ supervision_profiles:
   initials: LS
 - id: linsmar-da-silva-vital
   name: Linsmar da Silva Vital
-  avatar: ''
+  avatar: /images/linsmar-vital.png
   lattes_url: ''
   linkedin_url: https://br.linkedin.com/in/linsmar-vital
   initials: LV
 - id: mirlei-moura-da-silva
   name: Mirlei Moura da Silva
-  avatar: ''
+  avatar: /images/mirlei-moura.png
   lattes_url: https://lattes.cnpq.br/1142052092222961
   linkedin_url: https://br.linkedin.com/in/mirlei-moura/pt
   initials: MS
 - id: paloma-silva-de-brito
   name: Paloma Silva de Brito
-  avatar: ''
+  avatar: /images/paloma-brito.png
   lattes_url: ''
   linkedin_url: ''
   initials: PB
 - id: samela-karoline-dos-santos-rocha
   name: Sâmela Karoline dos Santos Rocha
-  avatar: ''
+  avatar: /images/samela-rocha.png
   lattes_url: ''
   linkedin_url: ''
   initials: SR
 - id: sara-sales-souza
   name: Sara Sales Souza
-  avatar: ''
+  avatar: /images/sara-sales.png
   lattes_url: ''
   linkedin_url: ''
   initials: SS
 - id: thiago-colares-chaves
   name: Thiago Colares Chaves
-  avatar: ''
+  avatar: /images/thiago-colares.png
   lattes_url: ''
   linkedin_url: ''
   initials: TC
 - id: thiago-felipe-nogueira-de-jesus
   name: Thiago Felipe Nogueira de Jesus
-  avatar: ''
+  avatar: /images/thiago-nogueira.png
   lattes_url: ''
   linkedin_url: ''
   initials: TJ
 - id: tiago-almeida-de-oliveira
   name: Tiago Almeida de Oliveira
-  avatar: ''
+  avatar: /images/tiago-oliveira.png
   lattes_url: ''
   linkedin_url: ''
   initials: TO
 - id: victor-brandao-orrico
   name: Victor Brandão Orrico
-  avatar: ''
+  avatar: /images/victor-orrico.png
   lattes_url: ''
   linkedin_url: https://br.linkedin.com/in/victor-orrico-14bb8073
   initials: VO
 - id: yan-farias-rodrigues
   name: Yan Farias Rodrigues
-  avatar: ''
+  avatar: /images/yan-rodrigues.png
   lattes_url: ''
   linkedin_url: https://br.linkedin.com/in/yanfariasrodriguesmacedo
   initials: YR
@@ -765,7 +763,7 @@ supervision_records:
                   {% if linkedin_url != '' %}<a href="{{ linkedin_url | escape_once }}">LinkedIn</a>{% endif %}
                 </p>
               {% endif %}
-              <p><strong><span data-content-language="en" lang="en">Research: </span><span data-content-language="pt" lang="pt-BR">Pesquisa: </span></strong>{% if record.research_title %}{{ record.research_title | escape }}{% else %}<span data-content-language="en" lang="en">Title not provided in the sources consulted.</span><span data-content-language="pt" lang="pt-BR">Título não informado nas fontes consultadas.</span>{% endif %}</p>
+              <p><strong><span data-content-language="en" lang="en">Research: </span><span data-content-language="pt" lang="pt-BR">Pesquisa: </span></strong>{% if record.research_title %}{{ record.research_title | escape }}{% else %}<span data-content-language="en" lang="en">To be defined</span><span data-content-language="pt" lang="pt-BR">A definir</span>{% endif %}</p>
               <p class="supervision-item__meta">{{ record.institution | escape }}{% if record.level %} · {% if record.level == 'Graduação' %}<span data-content-language="en" lang="en">Undergraduate</span><span data-content-language="pt" lang="pt-BR">Graduação</span>{% else %}<span data-content-language="en" lang="en">Specialization</span><span data-content-language="pt" lang="pt-BR">Especialização</span>{% endif %}{% endif %}</p>
             </li>
           {% endfor %}
@@ -801,3 +799,4 @@ supervision_records:
   });
 }());
 </script>
+

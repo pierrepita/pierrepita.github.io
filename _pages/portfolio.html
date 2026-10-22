@@ -1,14 +1,121 @@
 ---
 layout: archive
-title: "Portfolio"
-permalink: /portfolio/
+title: Projects
+permalink: /projects/
+redirect_from:
+  - /portfolio/
+  - /projetos/
 author_profile: true
+project_groups:
+  - key: leadership
+    pt: Coordenação / Vice-coordenação
+    en: Coordination / Deputy coordination
+  - key: participation
+    pt: Demais participações
+    en: Other participation
 ---
 
-{% include base_path %}
+<style>
+.projects-catalog { margin-top: 1.25rem; }
+.projects-summary { display: table; width: 100%; border-collapse: collapse; font-size: .85em; }
+.projects-summary caption { text-align: left; font-weight: 700; font-size: 1.15em; margin-bottom: .6rem; color: inherit; }
+.projects-summary th, .projects-summary td { padding: .65em .5em; border-bottom: 1px solid currentColor; }
+.projects-summary th { text-align: left; overflow-wrap: anywhere; }
+.projects-summary .number { text-align: right; font-variant-numeric: tabular-nums; }
+.projects-summary a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.projects-note, .projects-hint { font-size: .8em; line-height: 1.5; }
+.projects-group { border: 1px solid currentColor; border-radius: .45rem; margin: .85rem 0; }
+.projects-group > summary { display: list-item; list-style: disclosure-closed inside; padding: .85rem; cursor: pointer; font-weight: 600; }
+.projects-group[open] > summary { list-style-type: disclosure-open; border-bottom: 1px solid currentColor; }
+.projects-group > summary:focus-visible, .projects-summary a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.projects-list { margin: 0; padding: 0 1rem; list-style: none; }
+.project-item { padding: 1rem 0; border-bottom: 1px solid currentColor; }
+.project-item:last-child { border-bottom: 0; }
+.project-item h3 { margin: 0; font-size: 1.05em; overflow-wrap: anywhere; }
+.project-item p { margin: .65em 0 0; }
+.project-meta, .project-funding-note { font-size: .75em; line-height: 1.5; }
+.project-facts { margin: .85rem 0 0; display: grid; grid-template-columns: minmax(7rem, 1fr) minmax(0, 3fr); gap: .35rem .8rem; font-size: .85em; }
+.project-facts dt, .project-facts dd { margin: 0; overflow-wrap: anywhere; }
+.project-facts dt { font-weight: 600; }
+.projects-empty { padding: 1rem; }
+.projects-catalog [data-content-language="pt"] { display: none; }
+html[data-site-language="pt"] .projects-catalog [data-content-language="en"] { display: none; }
+html[data-site-language="pt"] .projects-catalog [data-content-language="pt"] { display: inline; }
+@media (max-width: 40em) {
+  .projects-summary { font-size: .8em; }
+  .project-facts { grid-template-columns: 1fr; gap: .2rem; }
+  .project-facts dd + dt { margin-top: .45rem; }
+}
+</style>
 
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+{% assign projects = site.data.projects %}
+{% assign coordinations = projects | where: 'role', 'coordinator' %}
+{% assign deputies = projects | where: 'role', 'vice_coordinator' %}
+{% assign leadership = coordinations | concat: deputies %}
+{% assign other_count = projects.size | minus: leadership.size %}
+{% assign leadership_roles = 'coordinator,vice_coordinator' | split: ',' %}
+<div class="projects-catalog" id="projects-catalog">
+  <table class="projects-summary">
+    <caption><span data-content-language="en" lang="en">Projects by role</span><span data-content-language="pt" lang="pt-BR">Projetos por atuação</span></caption>
+    <thead><tr><th scope="col"><span data-content-language="en" lang="en">Role</span><span data-content-language="pt" lang="pt-BR">Atuação</span></th><th scope="col" class="number"><span data-content-language="en" lang="en">Projects</span><span data-content-language="pt" lang="pt-BR">Projetos</span></th></tr></thead>
+    <tbody>{% for group in page.project_groups %}<tr>
+      <th scope="row"><a href="#projects-{{ group.key }}" data-projects-link><span data-content-language="en" lang="en">{{ group.en | escape }}</span><span data-content-language="pt" lang="pt-BR">{{ group.pt | escape }}</span></a></th>
+      <td class="number">{% if group.key == 'leadership' %}{{ leadership.size }}{% else %}{{ other_count }}{% endif %}</td>
+    </tr>{% endfor %}</tbody>
+    <tfoot><tr><th scope="row">Total</th><td class="number">{{ projects.size }}</td></tr></tfoot>
+  </table>
+  <p class="projects-note"><span data-content-language="en" lang="en">Includes ongoing and completed projects. Funding amounts refer to the project or agreement as a whole, when available. Unreported amounts do not mean zero funding.</span><span data-content-language="pt" lang="pt-BR">Inclui projetos em andamento e concluídos. Os valores correspondem ao financiamento global do projeto ou convênio, quando disponível. Valor não informado não significa ausência de financiamento.</span></p>
+  <p class="projects-hint"><span data-content-language="en" lang="en">Select a category to view the projects.</span><span data-content-language="pt" lang="pt-BR">Clique em uma categoria para ver os projetos.</span></p>
+  {% for group in page.project_groups %}
+  <details class="projects-group" id="projects-{{ group.key }}">
+    <summary><span data-content-language="en" lang="en">{{ group.en | escape }}</span><span data-content-language="pt" lang="pt-BR">{{ group.pt | escape }}</span> ({% if group.key == 'leadership' %}{{ leadership.size }}{% else %}{{ other_count }}{% endif %})</summary>
+    <ul class="projects-list">
+    {% for project in projects %}
+      {% assign project_group = 'participation' %}
+      {% if leadership_roles contains project.role %}{% assign project_group = 'leadership' %}{% endif %}
+      {% if project_group == group.key %}
+      <li class="project-item" id="project-{{ project.id | escape }}" data-no-translate>
+        <h3>{{ project.title | escape }}</h3>
+        <p class="project-meta">
+          {% case project.role %}
+          {% when 'coordinator' %}<span data-content-language="en" lang="en">Coordinator</span><span data-content-language="pt" lang="pt-BR">Coordenador</span>
+          {% when 'vice_coordinator' %}<span data-content-language="en" lang="en">Deputy coordinator</span><span data-content-language="pt" lang="pt-BR">Vice-coordenador</span>
+          {% when 'pillar_deputy' %}<span data-content-language="en" lang="en">Deputy lead, Pillar 1: Linkage Methods and Data Discovery</span><span data-content-language="pt" lang="pt-BR">Vice-líder do Pilar 1: Linkage Methods and Data Discovery</span>
+          {% else %}<span data-content-language="en" lang="en">Research team member</span><span data-content-language="pt" lang="pt-BR">Integrante</span>
+          {% endcase %}
+          · {{ project.start_year }}–{% if project.end_year %}{{ project.end_year }}{% else %}<span data-content-language="en" lang="en">present</span><span data-content-language="pt" lang="pt-BR">atual</span>{% endif %}
+          · {% if project.status == 'ongoing' %}<span data-content-language="en" lang="en">In progress</span><span data-content-language="pt" lang="pt-BR">Em andamento</span>{% else %}<span data-content-language="en" lang="en">Completed</span><span data-content-language="pt" lang="pt-BR">Concluído</span>{% endif %}
+        </p>
+        <p class="project-objective"><span data-content-language="en" lang="en">{{ project.summary_en | escape }}</span><span data-content-language="pt" lang="pt-BR">{{ project.summary_pt | escape }}</span></p>
+        <dl class="project-facts">
+          <dt><span data-content-language="en" lang="en">Funder(s)</span><span data-content-language="pt" lang="pt-BR">Financiador(es)</span></dt>
+          <dd>{% if project.funders.size > 0 %}{{ project.funders | join: '; ' | escape }}{% else %}<span data-content-language="en" lang="en">Not reported</span><span data-content-language="pt" lang="pt-BR">Não informado</span>{% endif %}</dd>
+          <dt><span data-content-language="en" lang="en">Funding (BRL)</span><span data-content-language="pt" lang="pt-BR">Financiamento (R$)</span></dt>
+          {% assign amount = project.funding_brl | default: '' | strip %}
+          <dd class="project-amount">{% if amount != '' %}R$ {{ amount | escape }}{% else %}<span data-content-language="en" lang="en">Not reported</span><span data-content-language="pt" lang="pt-BR">Não informado</span>{% endif %}</dd>
+        </dl>
+        {% if project.funding_note_pt or project.funding_note_en %}<p class="project-funding-note"><span data-content-language="en" lang="en">{{ project.funding_note_en | escape }}</span><span data-content-language="pt" lang="pt-BR">{{ project.funding_note_pt | escape }}</span></p>{% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+  {% endfor %}
+</div>
+<script>
+(function () {
+  'use strict';
+  var catalog = document.getElementById('projects-catalog');
+  if (!catalog) return;
+  catalog.addEventListener('click', function (event) {
+    var link = event.target.closest('[data-projects-link]');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    var group = document.getElementById(link.getAttribute('href').slice(1));
+    if (!group) return;
+    event.preventDefault();
+    group.open = true;
+    group.querySelector('summary').focus({preventScroll: true});
+    group.scrollIntoView({block: 'start'});
+  });
+}());
+</script>
