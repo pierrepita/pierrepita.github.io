@@ -1,0 +1,37 @@
+{%- assign metrics_pub = include.publication -%}
+{%- assign metrics_venue = nil -%}
+{%- assign metrics_name = metrics_pub.venue | strip | downcase -%}
+{%- for metrics_candidate in site.data.publication_metrics.venues -%}
+  {%- if metrics_pub.metrics_key and metrics_pub.metrics_key == metrics_candidate.key -%}
+    {%- assign metrics_venue = metrics_candidate -%}{%- break -%}
+  {%- endif -%}
+  {%- unless metrics_pub.metrics_key -%}
+    {%- for metrics_alias in metrics_candidate.aliases -%}
+      {%- assign metrics_alias_normalized = metrics_alias | strip | downcase -%}
+      {%- if metrics_name == metrics_alias_normalized -%}
+        {%- assign metrics_venue = metrics_candidate -%}{%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if metrics_venue -%}{%- break -%}{%- endif -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- if metrics_venue -%}
+<span class="publication-metrics" data-no-translate>
+  {%- if metrics_venue.kind == 'journal' -%}
+    {%- if metrics_venue.jif -%}
+      <a class="publication-metrics__badge" href="{{ metrics_venue.jif_source | escape_once }}" title="Journal Impact Factor (Clarivate), {{ metrics_venue.jif_year }}"><span>JIF {{ metrics_venue.jif_year }}:</span> <strong>{{ metrics_venue.jif }}</strong></a>
+    {%- else -%}
+      <span class="publication-metrics__badge publication-metrics__badge--pending"><span data-content-language="en" lang="en">JIF: unverified</span><span data-content-language="pt" lang="pt-BR">JIF: a confirmar</span></span>
+    {%- endif -%}
+    {%- if metrics_venue.sjr_quartile -%}
+      <a class="publication-metrics__badge" href="{{ metrics_venue.sjr_source | escape_once }}" title="SCImago: best quartile across subject categories; not a JCR quartile"><span>SJR {{ metrics_venue.sjr_year }}:</span> <strong>{{ metrics_venue.sjr_quartile }}</strong></a>
+    {%- endif -%}
+  {%- elsif metrics_venue.kind == 'event' -%}
+    {%- if metrics_venue.qualis -%}
+      <a class="publication-metrics__badge" href="{{ metrics_venue.qualis_source | escape_once }}" title="CAPES · Computação · {{ metrics_venue.qualis_period }} · classification of the venue"><span>Qualis {{ metrics_venue.qualis_period }}:</span> <strong>{{ metrics_venue.qualis }}</strong></a>
+    {%- else -%}
+      <span class="publication-metrics__badge publication-metrics__badge--pending"><span data-content-language="en" lang="en">Qualis {{ metrics_venue.qualis_period }}: unverified</span><span data-content-language="pt" lang="pt-BR">Qualis {{ metrics_venue.qualis_period }}: a confirmar</span></span>
+    {%- endif -%}
+  {%- endif -%}
+</span>
+{%- endif -%}
