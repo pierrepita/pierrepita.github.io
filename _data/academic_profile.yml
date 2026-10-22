@@ -1,0 +1,139 @@
+# Edit the English and Portuguese fields together. Dates are text, not YAML date objects.
+intro_en: I am an Adjunct Professor at the Federal University of Bahia (UFBA) and an associate researcher at CIDACS/Fiocruz.
+  My work connects data integration, record linkage and machine learning, with an emphasis on large-scale population
+  and health data.
+intro_pt: Sou professor adjunto da Universidade Federal da Bahia (UFBA) e pesquisador associado ao CIDACS/Fiocruz.
+  Minha atuação reúne integração de dados, vinculação de registros e aprendizado de máquina, com ênfase em dados
+  populacionais e de saúde em larga escala.
+lattes_url: https://lattes.cnpq.br/9031151666715654
+orcid_url: https://orcid.org/0000-0002-0616-620X
+education:
+- id: doctorate
+  year: '2020'
+  degree_en: PhD in Computer Science
+  degree_pt: Doutorado em Ciência da Computação
+  institution: Universidade Federal da Bahia (UFBA)
+  title: Clustering categorical data using the Frequency Factor
+  period_en: 'Study period: 2015–2019. Degree awarded in 2020.'
+  period_pt: 'Período de formação: 2015–2019. Título obtido em 2020.'
+  advisors: Marcos Ennes Barreto; Rosemeire Leovigildo Fiaccone
+  advisors_label_en: Supervisor and co-supervisor
+  advisors_label_pt: Orientador e coorientadora
+- id: masters
+  year: '2015'
+  degree_en: MSc in Computer Science
+  degree_pt: Mestrado em Ciência da Computação
+  institution: Universidade Federal da Bahia (UFBA)
+  title: Correlação probabilística implementada em Spark para Big Data em Saúde
+  period_en: 2013–2015
+  period_pt: 2013–2015
+  advisors: Marcos Barreto
+  advisors_label_en: Supervisor
+  advisors_label_pt: Orientador
+- id: specialization
+  year: '2011'
+  degree_en: Postgraduate specialization in Computer Networks and Telecommunications
+  degree_pt: Especialização em Redes de Computadores e Telecomunicações
+  institution: Universidade Salvador (UNIFACS)
+  title: OpenFlow e aplicações para a Internet do Futuro
+  period_en: 2010–2011
+  period_pt: 2010–2011
+  advisors: José Augusto Suruagy Monteiro
+  advisors_label_en: Supervisor
+  advisors_label_pt: Orientador
+- id: bachelors
+  year: '2010'
+  degree_en: Bachelor’s degree in Information Systems
+  degree_pt: Graduação em Sistemas de Informação
+  institution: Universidade Salvador (UNIFACS)
+  title: ERWEB — Modelador de entidade e relacionamento via web
+  period_en: 2005–2010
+  period_pt: 2005–2010
+  advisors: Daniela Barreto Araújo
+  advisors_label_en: Supervisor
+  advisors_label_pt: Orientadora
+experience:
+- id: ufba
+  role_en: Adjunct Professor
+  role_pt: Professor adjunto
+  institution: Universidade Federal da Bahia (UFBA)
+  period_en: 2022–present
+  period_pt: 2022–atual
+  description_en: Teaching, research and student supervision in the Department of Computer Science at the Institute
+    of Computing, under an exclusive dedication appointment. Member of the FORMAS research group and faculty member
+    of the Graduate Program in Computer Science (PGCOMP).
+  description_pt: Ensino, pesquisa e orientação no Departamento de Ciência da Computação do Instituto de Computação,
+    em regime de dedicação exclusiva. Integrante do grupo de pesquisa FORMAS e docente do Programa de Pós-Graduação
+    em Ciência da Computação (PGCOMP).
+  additional_en: 'Previous appointments at UFBA as a substitute lecturer: 2013–2015 and 2017–2018.'
+  additional_pt: 'Atuação anterior na UFBA como professor substituto: 2013–2015 e 2017–2018.'
+- id: cidacs
+  role_en: Associate Researcher · Research Fellow
+  role_pt: Pesquisador associado · Bolsista de pesquisa
+  institution: CIDACS / Fiocruz Bahia
+  period_en: 'Current research collaboration; fellowships at Fiocruz: 2014–2022'
+  period_pt: 'Colaboração científica atual; bolsas na Fiocruz: 2014–2022'
+  description_en: Research and development in large-scale record linkage, data integration and machine learning
+    applied to population and health studies. Work on linkage algorithms, indexing, high-performance processing
+    and evaluation of linkage quality.
+  description_pt: Pesquisa e desenvolvimento em vinculação de registros em larga escala, integração de dados e aprendizado
+    de máquina aplicados a estudos populacionais e de saúde. Atuação em algoritmos de vinculação, indexação, processamento
+    de alto desempenho e avaliação da qualidade da vinculação.
+- id: unifacs-professor
+  role_en: Lecturer · Guest Lecturer
+  role_pt: Professor colaborador · Professor convidado
+  institution: Universidade Salvador (UNIFACS)
+  period_en: 'Lecturer: 2012–2017; guest lecturer: 2017–2019'
+  period_pt: 'Professor colaborador: 2012–2017; professor convidado: 2017–2019'
+  description_en: Undergraduate teaching in computing and networks, including databases, systems analysis, network
+    security and Linux. Postgraduate teaching in Business Intelligence, Big Data and information security, including
+    massive parallel processing, cryptography and digital certification.
+  description_pt: Ensino de graduação em computação e redes, incluindo bancos de dados, análise de sistemas, segurança
+    de redes e Linux. Docência na pós-graduação em Business Intelligence, Big Data e segurança da informação, incluindo
+    processamento massivo paralelo, criptografia e certificação digital.
+- id: unifacs-systems
+  role_en: Network and Systems Administrator
+  role_pt: Administrador de redes e sistemas
+  institution: Universidade Salvador (UNIFACS)
+  period_en: 2010–2013
+  period_pt: 2010–2013
+  description_en: Analyst II, jointly responsible for university servers and network services, particularly the
+    infrastructure supporting distance learning and instructional design.
+  description_pt: Analista II, corresponsável pelos servidores e serviços de rede da universidade, especialmente
+    pela infraestrutura de suporte à educação a distância e ao design instrucional.
+editorial:
+- id: ijpds-ai
+  role_en: Guest editor
+  role_pt: Editor convidado
+  journal: International Journal of Population Data Science (IJPDS)
+  issue: Artificial Intelligence for Population Data Science
+  url: https://ijpds.org/index.php/ijpds/calls/ai
+  description_en: Member of the editorial panel for the special issue on artificial intelligence for population
+    data science.
+  description_pt: Integrante do painel editorial da edição temática sobre inteligência artificial para a ciência
+    de dados populacionais.
+journal_reviews:
+- name: International Journal of Population Data Science (IJPDS)
+- name: IEEE Latin America Transactions
+  period_en: 2023–present
+  period_pt: 2023–atual
+- name: BMC Research Notes
+  period_en: '2022'
+  period_pt: '2022'
+- name: Revista Brasileira de Epidemiologia
+  period_en: '2021'
+  period_pt: '2021'
+- name: Journal of the Brazilian Computer Society (JBCS)
+  period_en: '2021'
+  period_pt: '2021'
+conference_reviews:
+- acronym: SBCAS
+  name: Simpósio Brasileiro de Computação Aplicada à Saúde
+- acronym: SBBD
+  name: Simpósio Brasileiro de Bancos de Dados
+- acronym: ENIAC
+  name: Encontro Nacional de Inteligência Artificial e Computacional
+- acronym: KDMiLE
+  name: Symposium on Knowledge Discovery, Mining and Learning
+- acronym: BRACIS
+  name: Brazilian Conference on Intelligent Systems

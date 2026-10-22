@@ -26,13 +26,14 @@ main:
   - title: "Blog Posts"
     url: /year-archive/
     
-  - title: "CV"
-    url: /cv/
+  - title: "Academic profile"
+    url: /academic-profile/
     
   # - title: "CV"
   #   url: /cv-json/
     
   #- title: "Guide"
   #  url: /markdown/
+
 
 
