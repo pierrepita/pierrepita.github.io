@@ -22,7 +22,8 @@ supervision_categories:
 - key: postdoc
   pt: Pós-doc
   en: Postdoctoral
-# Perfis opcionais: preencha foto e links quando estiverem disponíveis.
+# Foto: envie o arquivo para images/ e use avatar: "/images/nome-do-arquivo.jpg".
+# Links pessoais pesquisados; campos vazios podem ser preenchidos depois.
 supervision_profiles:
 - id: andre-luis-dos-santos
   name: Andre Luis dos Santos
@@ -39,38 +40,38 @@ supervision_profiles:
 - id: carlos-jose-cardoso-dos-santos
   name: Carlos José Cardoso dos Santos
   avatar: ''
-  lattes_url: ''
-  linkedin_url: ''
+  lattes_url: https://lattes.cnpq.br/0403351730668323
+  linkedin_url: https://br.linkedin.com/in/cajoca-carloscardoso
   initials: CS
 - id: diego-quadros-dos-santos-dias
   name: Diego Quadros dos Santos Dias
   avatar: ''
   lattes_url: ''
-  linkedin_url: ''
+  linkedin_url: https://br.linkedin.com/in/diego-quadros-dos-santos-dias-7ab59a259
   initials: DD
 - id: eliel-batista-santos
   name: Eliel Batista Santos
   avatar: ''
   lattes_url: ''
-  linkedin_url: ''
+  linkedin_url: https://br.linkedin.com/in/eliel-batista-santos
   initials: ES
 - id: flavio-santos-conterato
   name: Flávio Santos Conterato
   avatar: ''
-  lattes_url: ''
-  linkedin_url: ''
+  lattes_url: https://lattes.cnpq.br/6243445332422451
+  linkedin_url: https://br.linkedin.com/in/flavioconterato
   initials: FC
 - id: gabriel-fernandes-rocha
   name: Gabriel Fernandes Rocha
   avatar: ''
-  lattes_url: ''
-  linkedin_url: ''
+  lattes_url: https://lattes.cnpq.br/2197536435354474
+  linkedin_url: https://br.linkedin.com/in/gabrielfernandesrocha/en
   initials: GR
 - id: guilherme-waldschmidt-pereira
   name: Guilherme Waldschmidt Pereira
   avatar: ''
-  lattes_url: ''
-  linkedin_url: ''
+  lattes_url: https://lattes.cnpq.br/0808347579761531
+  linkedin_url: https://br.linkedin.com/in/guilherme-waldschmidt-pereira
   initials: GP
 - id: iago-pinto-do-espirito-santo
   name: Iago Pinto do Espirito Santo
@@ -88,19 +89,19 @@ supervision_profiles:
   name: Joao Gabriel Zeba de Souza
   avatar: ''
   lattes_url: ''
-  linkedin_url: ''
+  linkedin_url: https://br.linkedin.com/in/joaogzeba
   initials: JS
 - id: jose-augusto-duarte-gomes
   name: José Augusto Duarte Gomes
   avatar: ''
-  lattes_url: ''
-  linkedin_url: ''
+  lattes_url: https://lattes.cnpq.br/0905012896965642
+  linkedin_url: https://br.linkedin.com/in/joseaugustoduarte7
   initials: JG
 - id: laianne-dos-santos-protasio
   name: Laianne dos Santos Protasio
   avatar: ''
-  lattes_url: ''
-  linkedin_url: ''
+  lattes_url: https://lattes.cnpq.br/2179922186158524
+  linkedin_url: https://br.linkedin.com/in/laianne-protasio
   initials: LP
 - id: leandro-menezes-santana-silva
   name: Leandro Menezes Santana Silva
@@ -112,13 +113,13 @@ supervision_profiles:
   name: Linsmar da Silva Vital
   avatar: ''
   lattes_url: ''
-  linkedin_url: ''
+  linkedin_url: https://br.linkedin.com/in/linsmar-vital
   initials: LV
 - id: mirlei-moura-da-silva
   name: Mirlei Moura da Silva
   avatar: ''
-  lattes_url: ''
-  linkedin_url: ''
+  lattes_url: https://lattes.cnpq.br/1142052092222961
+  linkedin_url: https://br.linkedin.com/in/mirlei-moura/pt
   initials: MS
 - id: paloma-silva-de-brito
   name: Paloma Silva de Brito
@@ -160,13 +161,13 @@ supervision_profiles:
   name: Victor Brandão Orrico
   avatar: ''
   lattes_url: ''
-  linkedin_url: ''
+  linkedin_url: https://br.linkedin.com/in/victor-orrico-14bb8073
   initials: VO
 - id: yan-farias-rodrigues
   name: Yan Farias Rodrigues
   avatar: ''
   lattes_url: ''
-  linkedin_url: ''
+  linkedin_url: https://br.linkedin.com/in/yanfariasrodriguesmacedo
   initials: YR
 supervision_records:
 - category: undergraduate_research
@@ -688,7 +689,7 @@ supervision_records:
   .supervision-profile-links a { display: inline-block; margin-right: .8em; text-underline-offset: .15em; }
   .supervision-status { display: inline-block; border: 1px solid currentColor; border-radius: .4em; padding: .15em .5em; font-size: .72em; white-space: nowrap; }
   .supervision-item p { margin: .65em 0 0; }
-  .supervision-item__meta, .supervision-item__sources { font-size: .75em; }
+  .supervision-item__meta { font-size: .75em; }
   .supervision-empty { padding: 1rem; margin: 0; font-size: .85em; }
   .supervision-catalog [data-content-language="pt"] { display: none; }
   html[data-site-language="pt"] .supervision-catalog [data-content-language="en"] { display: none; }
@@ -726,7 +727,7 @@ supervision_records:
     {% assign all_completed = supervision_records | where: 'status', 'Concluído' %}
     <tfoot><tr><th scope="row">Total</th><td class="number">{{ all_ongoing | size }}</td><td class="number">{{ all_completed | size }}</td><td class="number">{{ supervision_records | size }}</td></tr></tfoot>
   </table>
-  <p class="supervision-note"><span data-content-language="en" lang="en">Counts refer to supervision records, rather than distinct people. Sources: Lattes (updated August 31, 2026) and PGCOMP/UFBA SIGAA (checked October 22, 2026). Research titles are preserved in their original language.</span><span data-content-language="pt" lang="pt-BR">As contagens correspondem a orientações, não a pessoas distintas. Fontes: Lattes (atualizado em 31/08/2026) e SIGAA PGCOMP/UFBA (consultado em 22/10/2026). Os títulos das pesquisas são mantidos no idioma original.</span></p>
+  <p class="supervision-note"><span data-content-language="en" lang="en">Counts refer to supervision records, rather than distinct people. Last reviewed October 22, 2026. Research titles are preserved in their original language.</span><span data-content-language="pt" lang="pt-BR">As contagens correspondem a orientações, não a pessoas distintas. Última revisão em 22/10/2026. Os títulos das pesquisas são mantidos no idioma original.</span></p>
   <p class="supervision-hint"><span data-content-language="en" lang="en">Select a category to view its records. Select the section heading again to collapse the list.</span><span data-content-language="pt" lang="pt-BR">Clique em uma categoria para ver os registros. Clique novamente no título da seção para recolher a lista.</span></p>
 
   {% for category in page.supervision_categories %}
@@ -766,7 +767,6 @@ supervision_records:
               {% endif %}
               <p><strong><span data-content-language="en" lang="en">Research: </span><span data-content-language="pt" lang="pt-BR">Pesquisa: </span></strong>{% if record.research_title %}{{ record.research_title | escape }}{% else %}<span data-content-language="en" lang="en">Title not provided in the sources consulted.</span><span data-content-language="pt" lang="pt-BR">Título não informado nas fontes consultadas.</span>{% endif %}</p>
               <p class="supervision-item__meta">{{ record.institution | escape }}{% if record.level %} · {% if record.level == 'Graduação' %}<span data-content-language="en" lang="en">Undergraduate</span><span data-content-language="pt" lang="pt-BR">Graduação</span>{% else %}<span data-content-language="en" lang="en">Specialization</span><span data-content-language="pt" lang="pt-BR">Especialização</span>{% endif %}{% endif %}</p>
-              <p class="supervision-item__sources"><span data-content-language="en" lang="en">Sources: </span><span data-content-language="pt" lang="pt-BR">Fontes: </span>{% for source in record.sources %}<a href="{{ source.url | escape_once }}">{{ source.label | escape }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
             </li>
           {% endfor %}
         </ul>
