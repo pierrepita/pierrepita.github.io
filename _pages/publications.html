@@ -11,33 +11,138 @@ author_profile: true
 
 {% include base_path %}
 
-<div class="publication-metrics-note" data-no-translate>
-  <p data-content-language="en" lang="en">Venue indicators: JIF = Clarivate Journal Impact Factor; SJR = best SCImago quartile across subject categories (not JCR). Years refer to the indicators, not the publication date. Qualis refers to the CAPES Computing classification for 2021–2024 and is displayed as a venue reference, including for papers outside that period. Unverified values are marked explicitly.</p>
-  <p data-content-language="pt" lang="pt-BR">Indicadores dos veículos: JIF = fator de impacto Clarivate; SJR = melhor quartil SCImago entre as categorias (não é o quartil JCR). Os anos referem-se aos indicadores, não à data da publicação. O Qualis corresponde à classificação CAPES de Computação para 2021–2024 e é exibido como referência do veículo, inclusive para trabalhos fora desse período. Valores a confirmar estão identificados.</p>
-</div>
+<style>
+  .publication-catalog { margin-top: 1.5rem; }
+  .publication-catalog .publication-summary { display: table; width: 100%; margin: 0 0 .65rem; font-size: .9em; border-collapse: collapse; }
+  .publication-summary caption { text-align: left; font-size: 1.2em; font-weight: 700; margin-bottom: .6rem; color: inherit; }
+  .publication-summary th, .publication-summary td { padding: .65em .75em; border-bottom: 1px solid currentColor; text-align: left; overflow-wrap: anywhere; }
+  .publication-summary .publication-summary__count { text-align: right; width: 5rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .publication-summary tfoot { font-weight: 700; }
+  .publication-summary a { color: inherit; text-decoration: underline; text-underline-offset: .18em; }
+  .publication-catalog__hint { margin: .5rem 0 1.25rem; font-size: .85em; }
+  .publication-group { border: 1px solid currentColor; border-radius: .45rem; margin: .85rem 0; }
+  .publication-group > summary { display: list-item; list-style: disclosure-closed inside; cursor: pointer; padding: .85rem; font-weight: 600; line-height: 1.5; }
+  .publication-group[open] > summary { list-style-type: disclosure-open; border-bottom: 1px solid currentColor; }
+  .publication-group > summary:focus-visible, .publication-summary a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  .publication-group__count { display: inline-block; margin-left: .5em; font-size: .8em; font-weight: 400; }
+  .publication-group__content { padding: .25rem 1rem .8rem; }
+  .publication-group__content .list__item { padding-right: 0; }
+  .publication-indicator-help { margin: 1.6rem 0; font-size: .85em; }
+  .publication-indicator-help > summary { cursor: pointer; font-weight: 600; }
+  .publication-catalog [data-content-language="pt"] { display: none; }
+  html[data-site-language="pt"] .publication-catalog [data-content-language="en"] { display: none; }
+  html[data-site-language="pt"] .publication-catalog [data-content-language="pt"] { display: inline; }
+  @media (max-width: 40em) {
+    .publication-summary th, .publication-summary td { padding: .6em .4em; }
+    .publication-group > summary { padding: .7rem; }
+    .publication-group__content { padding: .2rem .7rem .7rem; }
+  }
+</style>
 
-
-<!-- New style rendering if publication categories are defined -->
+{% assign all_publications = site.publications | sort: 'date' | reverse %}
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
+  {% assign publication_categories = site.publication_category %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  {% assign publication_categories = all_publications | group_by: 'category' %}
 {% endif %}
 
+<div class="publication-catalog" id="publication-catalog">
+  <table class="publication-summary">
+    <caption>
+      <span data-content-language="en" lang="en">Publications by category</span>
+      <span data-content-language="pt" lang="pt-BR">Publicações por categoria</span>
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col"><span data-content-language="en" lang="en">Category</span><span data-content-language="pt" lang="pt-BR">Categoria</span></th>
+        <th scope="col" class="publication-summary__count"><span data-content-language="en" lang="en">Count</span><span data-content-language="pt" lang="pt-BR">Quantidade</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign publication_total = 0 %}
+      {% for category in publication_categories %}
+        {% if site.publication_category %}
+          {% assign category_key = category[0] %}
+          {% assign category_title = category[1].title %}
+          {% assign category_posts = all_publications | where: 'category', category_key %}
+        {% else %}
+          {% assign category_key = category.name %}
+          {% assign category_title = category.name | default: 'Other publications' %}
+          {% assign category_posts = category.items %}
+        {% endif %}
+        {% assign category_count = category_posts | size %}
+        {% if category_count > 0 %}
+          {% assign publication_total = publication_total | plus: category_count %}
+          <tr>
+            <th scope="row"><a href="#publication-group-{{ forloop.index }}" data-publication-group-link>{{ category_title | escape }}</a></th>
+            <td class="publication-summary__count">{{ category_count }}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row"><span data-content-language="en" lang="en">Total</span><span data-content-language="pt" lang="pt-BR">Total</span></th>
+        <td class="publication-summary__count">{{ publication_total }}</td>
+      </tr>
+    </tfoot>
+  </table>
 
+  <p class="publication-catalog__hint">
+    <span data-content-language="en" lang="en">Select a category to view its publications. Select its heading again to collapse the list.</span>
+    <span data-content-language="pt" lang="pt-BR">Clique em uma categoria para ver as publicações. Clique novamente no título da seção para recolher a lista.</span>
+  </p>
 
+  {% for category in publication_categories %}
+    {% if site.publication_category %}
+      {% assign category_key = category[0] %}
+      {% assign category_title = category[1].title %}
+      {% assign category_posts = all_publications | where: 'category', category_key %}
+    {% else %}
+      {% assign category_key = category.name %}
+      {% assign category_title = category.name | default: 'Other publications' %}
+      {% assign category_posts = category.items %}
+    {% endif %}
+    {% assign category_count = category_posts | size %}
+    {% if category_count > 0 %}
+      <details class="publication-group" id="publication-group-{{ forloop.index }}">
+        <summary>
+          <span>{{ category_title | escape }}</span>
+          <span class="publication-group__count">({{ category_count }})</span>
+        </summary>
+        <div class="publication-group__content">
+          {% for post in category_posts %}
+            {% include archive-single.html %}
+          {% endfor %}
+        </div>
+      </details>
+    {% endif %}
+  {% endfor %}
 
+  <details class="publication-indicator-help">
+    <summary><span data-content-language="en" lang="en">About venue indicators</span><span data-content-language="pt" lang="pt-BR">Sobre os indicadores dos veículos</span></summary>
+    <div class="publication-metrics-note" data-no-translate>
+      <p data-content-language="en" lang="en">Venue indicators: JIF = Clarivate Journal Impact Factor; SJR = best SCImago quartile across subject categories (not JCR). Years refer to the indicators, not the publication date. Qualis refers to the CAPES Computing classification for 2021–2024 and is displayed as a venue reference, including for papers outside that period. Unverified values are marked explicitly.</p>
+      <p data-content-language="pt" lang="pt-BR">Indicadores dos veículos: JIF = fator de impacto Clarivate; SJR = melhor quartil SCImago entre as categorias (não é o quartil JCR). Os anos referem-se aos indicadores, não à data da publicação. O Qualis corresponde à classificação CAPES de Computação para 2021–2024 e é exibido como referência do veículo, inclusive para trabalhos fora desse período. Valores a confirmar estão identificados.</p>
+    </div>
+  </details>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var catalog = document.getElementById('publication-catalog');
+  if (!catalog) return;
+  catalog.addEventListener('click', function (event) {
+    var link = event.target.closest('[data-publication-group-link]');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    var group = document.getElementById(link.getAttribute('href').slice(1));
+    if (!group) return;
+    event.preventDefault();
+    group.open = true;
+    var summary = group.querySelector('summary');
+    if (summary) summary.focus({preventScroll: true});
+    group.scrollIntoView({block: 'start'});
+  });
+}());
+</script>
