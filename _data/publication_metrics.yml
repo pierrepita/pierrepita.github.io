@@ -1,0 +1,313 @@
+# Indicators of publication venues. Empty fields mean unverified, never zero.
+checked_on: '2026-10-22'
+policy:
+  jif: Latest verified JIF, not historical publication-year JIF
+  quartile: SCImago best quartile across subject categories, not JCR quartile
+  qualis: Venue classification in Computing for 2021–2024, displayed as a reference for all publication years
+venues:
+- key: lancet-americas
+  kind: journal
+  name: Lancet Regional Health-Americas
+  aliases:
+  - Lancet Regional Health-Americas
+  - The Lancet Regional Health - Americas
+  - The Lancet Regional Health – Americas
+  issn: 2667-193X
+  jif: '9.1'
+  jif_year: 2025
+  jif_source: https://www.thelancet.com/journal-impact-metrics
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=21101082055&tip=sid
+  checked_on: '2026-10-22'
+- key: ijpds
+  kind: journal
+  name: International Journal of Population Data Science (IJPDS)
+  aliases:
+  - International Journal of Population Data Science (IJPDS)
+  - International Journal of Population Data Science
+  issn: 2399-4908
+  jif: null
+  jif_year: null
+  jif_source: https://ijpds.org/credentials
+  jif_status: unverified
+  sjr_quartile: Q2
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=21100996100&tip=sid
+  checked_on: '2026-10-22'
+- key: paediatric-perinatal
+  kind: journal
+  name: Paediatric and Perinatal Epidemiology
+  aliases:
+  - Paediatric and Perinatal Epidemiology
+  issn: 1365-3016
+  jif: '2.7'
+  jif_year: 2025
+  jif_source: https://onlinelibrary.wiley.com/journal/13653016/journal-metrics
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=15634&tip=sid
+  checked_on: '2026-10-22'
+- key: peerj
+  kind: journal
+  name: PeerJ
+  aliases:
+  - PeerJ
+  issn: 2167-8359
+  jif: '2.9'
+  jif_year: 2025
+  jif_source: https://peerj.com/life-environment/
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=21100239256&tip=sid
+  checked_on: '2026-10-22'
+- key: ije
+  kind: journal
+  name: International Journal of Epidemiology
+  aliases:
+  - International Journal of Epidemiology
+  issn: 1464-3685
+  jif: '5.7'
+  jif_year: 2025
+  jif_source: https://academic.oup.com/ije/pages/About
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=14750&tip=sid
+  checked_on: '2026-10-22'
+- key: bmc-medical-informatics
+  kind: journal
+  name: BMC Medical Informatics and Decision Making
+  aliases:
+  - BMC Medical Informatics and Decision Making
+  issn: 1472-6947
+  jif: '5.5'
+  jif_year: 2025
+  jif_source: https://link.springer.com/journal/12911
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=23602&tip=sid
+  checked_on: '2026-10-22'
+- key: frontiers-pharmacology
+  kind: journal
+  name: Frontiers in Pharmacology
+  aliases:
+  - Frontiers in Pharmacology
+  issn: 1663-9812
+  jif: '5.4'
+  jif_year: 2025
+  jif_source: https://www.frontiersin.org/about/impact
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=21100214102&tip=sid
+  checked_on: '2026-10-22'
+- key: ieee-jbhi
+  kind: journal
+  name: IEEE Journal of Biomedical and Health Informatics
+  aliases:
+  - IEEE Journal of Biomedical and Health Informatics
+  issn: 2168-2208
+  jif: '7.7'
+  jif_year: 2025
+  jif_source: https://open.ieee.org/wp-content/uploads/IEEE-Title-List-August-2026.pdf
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.scimagojr.com/journalsearch.php?clean=0&q=21100256982&tip=sid
+  checked_on: '2026-10-22'
+- key: sbsi
+  kind: event
+  name: Simpósio Brasileiro de Sistemas de Informação
+  aliases:
+  - Anais do XXII Simpósio Brasileiro de Sistemas de Informação (SBSI 2026)
+  acronym: SBSI
+  qualis: A4
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: verified
+  checked_on: '2026-10-22'
+- key: sbcas
+  kind: event
+  name: Simpósio Brasileiro de Computação Aplicada à Saúde
+  aliases:
+  - Anais do XXVI Simpósio Brasileiro de Computação Aplicada à Saúde (SBCAS 2026)
+  acronym: SBCAS
+  qualis: A4
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: verified
+  checked_on: '2026-10-22'
+- key: sbbd
+  kind: event
+  name: Simpósio Brasileiro de Banco de Dados
+  aliases:
+  - Anais do XL Simpósio Brasileiro de Bancos de Dados (SBBD 2025)
+  - Anais do XXX Simpósio Brasileiro de Banco de Dados
+  acronym: SBBD
+  qualis: A4
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: verified
+  checked_on: '2026-10-22'
+- key: sbbd-extended
+  kind: event
+  name: Anais Estendidos do XXXIX Simpósio Brasileiro de Banco de Dados (SBBD Estendido 2024)
+  aliases:
+  - Anais Estendidos do XXXIX Simpósio Brasileiro de Banco de Dados (SBBD Estendido 2024)
+  acronym: null
+  qualis: null
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: not_found
+  checked_on: '2026-10-22'
+- key: stil
+  kind: event
+  name: Brazilian Symposium in Information and Human Language Technology
+  aliases:
+  - Anais do XV Simpósio Brasileiro de Tecnologia da Informação e da Linguagem Humana (STIL 2024)
+  acronym: STIL
+  qualis: B1
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: verified
+  checked_on: '2026-10-22'
+- key: bracis
+  kind: event
+  name: Brazilian Conference on Intelligent Systems
+  aliases:
+  - 8th Brazilian Conference on Intelligent Systems (BRACIS 2019)
+  acronym: BRACIS
+  qualis: A3
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: verified
+  checked_on: '2026-10-22'
+- key: lads
+  kind: event
+  name: Proceedings of the Latin America Data Science Workshop co-located with VLDB 2018
+  aliases:
+  - Proceedings of the Latin America Data Science Workshop co-located with VLDB 2018
+  acronym: null
+  qualis: null
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: not_found
+  checked_on: '2026-10-22'
+- key: dawak
+  kind: event
+  name: International Conference on Big Data Analytics and Knowledge Discovery
+  aliases:
+  - Proceedings of the 19th International Conference on Big Data Analytics and Knowledge Discovery (DaWaK 2017)
+  acronym: DAWAK
+  qualis: B1
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: verified
+  checked_on: '2026-10-22'
+- key: cbms
+  kind: event
+  name: International Symposium on Computer-Based Medical Systems
+  aliases:
+  - Proceedings of the 30th IEEE International Symposium on Computer-Based Medical Systems
+  acronym: CBMS
+  qualis: A2
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: verified
+  checked_on: '2026-10-22'
+- key: cbie-workshops
+  kind: event
+  name: Anais dos Workshops do V Congresso Brasileiro de Informática na Educação (CBIE 2016)
+  aliases:
+  - Anais dos Workshops do V Congresso Brasileiro de Informática na Educação (CBIE 2016)
+  acronym: null
+  qualis: null
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: not_found
+  checked_on: '2026-10-22'
+- key: beyondmr
+  kind: event
+  name: Proceedings of the Workshops of the EDBT/ICDT 2015 Joint Conference (BeyondMR 2015)
+  aliases:
+  - Proceedings of the Workshops of the EDBT/ICDT 2015 Joint Conference (BeyondMR 2015)
+  acronym: null
+  qualis: null
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: not_found
+  checked_on: '2026-10-22'
+- key: ipdln-2026
+  kind: event
+  name: Conference Proceedings for the International Population Data Linkage Network Conference 2026
+  aliases:
+  - Conference Proceedings for the International Population Data Linkage Network Conference 2026
+  acronym: null
+  qualis: null
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: not_found
+  checked_on: '2026-10-22'
+- key: ipdln-2022
+  kind: event
+  name: Conference Proceedings for International Population Data Linkage Conference 2022
+  aliases:
+  - Conference Proceedings for International Population Data Linkage Conference 2022
+  acronym: null
+  qualis: null
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: not_found
+  checked_on: '2026-10-22'
+- key: adrn
+  kind: event
+  name: Proceedings of ADRN 2017
+  aliases:
+  - Proceedings of ADRN 2017
+  acronym: null
+  qualis: null
+  qualis_area: Computação
+  qualis_period: 2021–2024
+  qualis_source: https://docs.google.com/spreadsheets/d/1XpkkPmAFVwqDWv5zAOPOuhF3WeJK5PLy/edit
+  qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
+  qualis_status: not_found
+  checked_on: '2026-10-22'
