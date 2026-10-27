@@ -60,12 +60,26 @@
       if (original.title !== null) element.setAttribute('title', translatedValue(original.title, language));
     });
     var updatedTitle = originalTitle;
-    translations.forEach(function (pair) {
-      if (originalTitle === pair.en || originalTitle.indexOf(pair.en + ' - ') === 0) {
-        updatedTitle = pair[language] + originalTitle.slice(pair.en.length);
-      }
-    });
+    var titleNode = document.querySelector('title[data-site-name]');
+    if (titleNode) {
+      var siteName = titleNode.getAttribute('data-site-name');
+      var separator = ' ' + titleNode.getAttribute('data-title-separator') + ' ';
+      var pageTitle = titleNode.getAttribute('data-page-title') || '';
+      var hasPageTitle = pageTitle && pageTitle !== siteName;
+      var originalBase = siteName + (hasPageTitle ? separator + pageTitle : '');
+      var suffix = originalTitle.indexOf(originalBase) === 0 ? originalTitle.slice(originalBase.length) : '';
+      updatedTitle = siteName + (hasPageTitle ? separator + translatedValue(pageTitle, language) : '') + suffix;
+    } else {
+      translations.forEach(function (pair) {
+        if (originalTitle === pair.en || originalTitle.indexOf(pair.en + ' - ') === 0) {
+          updatedTitle = pair[language] + originalTitle.slice(pair.en.length);
+        }
+      });
+    }
     document.title = updatedTitle;
+    document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]').forEach(function (meta) {
+      meta.setAttribute('content', updatedTitle);
+    });
   }
 
   function setLanguage(language, updateURL) {
@@ -103,3 +117,4 @@
   window.SiteLanguage = {setLanguage: setLanguage, getLanguage: function () { return document.documentElement.dataset.siteLanguage; }};
   setLanguage(document.documentElement.dataset.siteLanguage === 'pt' ? 'pt' : 'en', false);
 }());
+
