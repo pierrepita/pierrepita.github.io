@@ -5,6 +5,27 @@ permalink: /talks/
 author_profile: true
 ---
 
+<style>
+.talks-page [data-content-language="pt"] { display: none; }
+html[data-site-language="pt"] .talks-page [data-content-language="en"] { display: none; }
+html[data-site-language="pt"] .talks-page [data-content-language="pt"] { display: inline; }
+.talks-page .talks-jump { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin: 1rem 0 1.5rem; }
+.talks-page #talks-recordings, .talks-page #in-the-media { scroll-margin-top: 5rem; }
+.talks-page .media-list { list-style: none; padding: 0; margin-left: 0; }
+.talks-page .media-item { border-left: 3px solid #d8dee4; padding: .2rem 0 .2rem 1rem; margin-bottom: 1.5rem; }
+.talks-page .media-item h3 { margin: .25rem 0 .5rem; }
+.talks-page .media-meta { font-size: .85em; }
+.talks-page .media-role { font-size: .9em; }
+</style>
+
+<div class="talks-page">
+  <nav class="talks-jump" aria-label="Talks and media sections">
+    <a href="#talks-recordings"><span lang="en" data-content-language="en">Talks and video lectures</span><span lang="pt-BR" data-content-language="pt">Palestras e videoaulas</span></a>
+    <a href="#in-the-media"><span lang="en" data-content-language="en">In the media</span><span lang="pt-BR" data-content-language="pt">Na imprensa</span></a>
+  </nav>
+  <div id="talks-recordings">
+
+
 {% if site.talkmap_link == true %}
 
 <p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
@@ -14,3 +35,24 @@ author_profile: true
 {% for post in site.talks reversed %}
   {% include archive-single-talk.html %}
 {% endfor %}
+
+
+  </div>
+
+  <section id="in-the-media" aria-labelledby="media-heading">
+    <h2 id="media-heading"><span lang="en" data-content-language="en">In the media</span><span lang="pt-BR" data-content-language="pt">Na imprensa</span></h2>
+    <p><span lang="en" data-content-language="en">Interviews and contributions to news reports.</span><span lang="pt-BR" data-content-language="pt">Entrevistas e contribuições a reportagens.</span></p>
+    <ul class="media-list">
+    {% assign media_entries = site.data.media | sort: 'date' | reverse %}
+    {% for item in media_entries %}
+      <li class="media-item" id="media-{{ item.id | escape_once }}">
+        <h3 data-no-translate><a href="{{ item.url | escape_once }}">{{ item.title | escape_once }}</a></h3>
+        <p class="media-meta"><strong data-no-translate>{{ item.outlet | escape_once }}</strong> · <time datetime="{{ item.date | escape_once }}">{{ item.date | date: '%d/%m/%Y' }}</time>{% if item.journalist %} · <span lang="en" data-content-language="en">By </span><span lang="pt-BR" data-content-language="pt">Por </span><span data-no-translate>{{ item.journalist | escape_once }}</span>{% endif %}</p>
+        <p class="media-role"><span lang="en" data-content-language="en">{{ item.role_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ item.role_pt | escape_once }}</span></p>
+        <p><span lang="en" data-content-language="en">{{ item.summary_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ item.summary_pt | escape_once }}</span></p>
+        <p><a class="btn btn--primary" href="{{ item.url | escape_once }}"><span lang="en" data-content-language="en">Read the article</span><span lang="pt-BR" data-content-language="pt">Ler a matéria</span></a></p>
+      </li>
+    {% endfor %}
+    </ul>
+  </section>
+</div>
