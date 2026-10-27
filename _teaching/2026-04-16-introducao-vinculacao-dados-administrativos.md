@@ -38,6 +38,6 @@ redirect_from:
 
 <h2><span lang="en" data-content-language="en">Watch the recording</span><span lang="pt-BR" data-content-language="pt">Assistir à gravação</span></h2>
 <div style="position:relative; padding-top:56.25%; margin:1em 0;">
-  <iframe src="https://www.youtube-nocookie.com/embed/-hb7MeIozVU" title="Introdução à vinculação de dados administrativos (Record Linkage)" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/-hb7MeIozVU?start=549" title="Introdução à vinculação de dados administrativos (Record Linkage)" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <p><a class="btn btn--primary" href="https://www.youtube.com/watch?v=-hb7MeIozVU&amp;t=549s"><span lang="en" data-content-language="en">Watch on YouTube</span><span lang="pt-BR" data-content-language="pt">Assistir no YouTube</span></a></p>
