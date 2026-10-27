@@ -1,0 +1,13 @@
+# Add future press appearances as new entries; dates use YYYY-MM-DD.
+- id: a-tarde-integracao-dados-covid-2020
+  title: Integração de dados é arma essencial contra o coronavírus
+  outlet: A TARDE
+  journalist: Bruno Luiz
+  date: '2020-05-24'
+  url: https://atarde.com.br/bahia/integracao-de-dados-e-arma-essencial-contra-o-coronavirus-1118385
+  role_pt: Pesquisador do CIDACS/Fiocruz entrevistado na reportagem.
+  role_en: CIDACS/Fiocruz researcher interviewed for the article.
+  summary_pt: Entrevista sobre o uso de dados integrados na resposta à Covid-19, abordando informações incompletas,
+    qualidade das bases e o papel das evidências nas decisões da gestão pública.
+  summary_en: Interview on using integrated data in the Covid-19 response, covering incomplete information, database
+    quality and the role of evidence in public-sector decisions.
