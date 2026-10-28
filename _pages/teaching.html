@@ -6,7 +6,61 @@ author_profile: true
 ---
 
 {% include base_path %}
+<style>
+.mata60-course, .teaching-catalog { --course-line: var(--global-border-color, #d8e0e7); --course-accent: #356f91; }
+.mata60-course [data-content-language="pt"], .teaching-catalog [data-content-language="pt"] { display: none; }
+html[data-site-language="pt"] .mata60-course [data-content-language="en"], html[data-site-language="pt"] .teaching-catalog [data-content-language="en"] { display: none; }
+html[data-site-language="pt"] .mata60-course [data-content-language="pt"], html[data-site-language="pt"] .teaching-catalog [data-content-language="pt"] { display: inline; }
+.mata60-course a, .teaching-catalog a { overflow-wrap: anywhere; }
+.mata60-course .course-jump, .teaching-catalog .course-jump { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin: 1rem 0 1.6rem; font-size: .88em; }
+.mata60-course section, .mata60-course details, .teaching-catalog section { scroll-margin-top: 5rem; }
+.mata60-course .syllabus-box { border-left: 4px solid var(--course-accent); background: rgba(53,111,145,.07); padding: .8rem 1.1rem; margin: 1rem 0 1.6rem; }
+.mata60-course .syllabus-box h2 { margin-top: .2rem; }
+.mata60-course .course-note, .teaching-catalog .course-note { font-size: .84em; opacity: .82; }
+.mata60-course .course-metrics, .teaching-catalog .course-metrics { display: flex; flex-wrap: wrap; gap: .45rem 1.4rem; font-size: .9em; margin: .8rem 0 1.4rem; }
+.mata60-course .course-table-wrap { overflow-x: auto; margin-bottom: 1.2rem; }
+.mata60-course .course-outline { width: 100%; min-width: 25rem; border-collapse: collapse; font-size: .83em; }
+.mata60-course .course-outline td, .mata60-course .course-outline th { text-align: left; padding: .6rem; border-bottom: 1px solid var(--course-line); vertical-align: top; }
+.mata60-course .course-outline .number { text-align: center; }
+.mata60-course .course-module { border: 1px solid var(--course-line); border-radius: .35rem; margin: 1rem 0; padding: .8rem 1rem; }
+.mata60-course .course-module summary { cursor: pointer; font-weight: 600; line-height: 1.5; }
+.mata60-course .course-lessons { list-style: none; margin: .7rem 0 0; padding: 0; }
+.mata60-course .course-lesson { padding: 1rem 0; border-top: 1px solid var(--course-line); }
+.mata60-course .course-lesson h3 { font-size: 1em; margin: .1rem 0 .4rem; line-height: 1.5; }
+.mata60-course .course-lesson > p { margin: .4rem 0 .7rem; font-size: .9em; }
+.mata60-course .lesson-number { color: var(--course-accent); }
+.mata60-course .course-materials { list-style: none; padding: 0; margin: .6rem 0 0; }
+.mata60-course .course-materials li { margin: .4rem 0; }
+.mata60-course .course-materials a { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .25rem .75rem; padding: .5rem .65rem; border: 1px solid var(--course-line); border-radius: .25rem; font-size: .85em; text-decoration: none; }
+.mata60-course .course-materials a:hover, .mata60-course .course-materials a:focus-visible { border-color: var(--course-accent); text-decoration: underline; }
+.mata60-course .file-meta { font-size: .8em; white-space: nowrap; opacity: .82; }
+.mata60-course .project-card, .teaching-catalog .course-card { border: 1px solid var(--course-line); border-radius: .35rem; padding: 1rem 1.1rem; margin: 1rem 0; }
+.mata60-course .project-card h3, .teaching-catalog .course-card h3 { margin-top: .1rem; }
+.teaching-catalog .course-card p { margin: .7rem 0; }
+.mata60-course .download-caption { margin-top: 1rem; }
+@media (max-width: 600px) { .mata60-course .course-module { padding: .7rem; } .mata60-course .course-materials a { display: block; } .mata60-course .file-meta { display: block; margin-top: .25rem; } }
+</style>
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="teaching-catalog">
+  <nav class="course-jump" aria-label="Teaching sections">
+    <a href="#courses"><span lang="en" data-content-language="en">Courses</span><span lang="pt-BR" data-content-language="pt">Disciplinas</span></a>
+    <a href="#video-lectures"><span lang="en" data-content-language="en">Video lectures</span><span lang="pt-BR" data-content-language="pt">Videoaulas</span></a>
+  </nav>
+  <section id="courses">
+    <h2><span lang="en" data-content-language="en">Courses</span><span lang="pt-BR" data-content-language="pt">Disciplinas</span></h2>
+    {% for item in site.data.courses %}{% assign course = site.data[item.data_file] %}
+    {% assign lesson_count = 0 %}{% for module in course.modules %}{% assign lesson_count = lesson_count | plus: module.lessons.size %}{% endfor %}
+    <article class="course-card">
+      <h3><a href="{{ item.url | relative_url }}"><span data-no-translate>{{ item.code | escape_once }}</span> — <span lang="en" data-content-language="en">{{ item.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ item.title_pt | escape_once }}</span></a></h3>
+      <p><span lang="en" data-content-language="en">{{ item.summary_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ item.summary_pt | escape_once }}</span></p>
+      <p class="course-metrics"><span>{{ course.modules.size }} <span lang="en" data-content-language="en">modules</span><span lang="pt-BR" data-content-language="pt">módulos</span></span><span>{{ lesson_count }} <span lang="en" data-content-language="en">content lessons</span><span lang="pt-BR" data-content-language="pt">aulas de conteúdo</span></span><span>{{ course.assets.size }} <span data-no-translate>PDFs</span></span></p>
+      <p><a class="btn btn--primary" href="{{ item.url | relative_url }}"><span lang="en" data-content-language="en">View content and materials</span><span lang="pt-BR" data-content-language="pt">Ver conteúdos e materiais</span></a></p>
+    </article>
+    {% endfor %}
+  </section>
+  <section id="video-lectures">
+    <h2><span lang="en" data-content-language="en">Video lectures</span><span lang="pt-BR" data-content-language="pt">Videoaulas</span></h2>
+    {% assign video_lectures = site.teaching | where: 'type', 'Video lecture' | sort: 'date' | reverse %}
+    {% for post in video_lectures %}{% include archive-single.html %}{% endfor %}
+  </section>
+</div>

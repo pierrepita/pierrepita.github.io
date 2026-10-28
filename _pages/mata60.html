@@ -1,0 +1,133 @@
+---
+layout: archive
+title: "MATA60 — Bancos de Dados"
+description: "Conteúdos, projetos e materiais didáticos de MATA60 — Bancos de Dados, UFBA."
+permalink: /teaching/mata60/
+author_profile: true
+---
+
+{% assign course = site.data.mata60 %}
+{% assign lesson_count = 0 %}
+{% for module in course.modules %}{% assign lesson_count = lesson_count | plus: module.lessons.size %}{% endfor %}
+<style>
+.mata60-course, .teaching-catalog { --course-line: var(--global-border-color, #d8e0e7); --course-accent: #356f91; }
+.mata60-course [data-content-language="pt"], .teaching-catalog [data-content-language="pt"] { display: none; }
+html[data-site-language="pt"] .mata60-course [data-content-language="en"], html[data-site-language="pt"] .teaching-catalog [data-content-language="en"] { display: none; }
+html[data-site-language="pt"] .mata60-course [data-content-language="pt"], html[data-site-language="pt"] .teaching-catalog [data-content-language="pt"] { display: inline; }
+.mata60-course a, .teaching-catalog a { overflow-wrap: anywhere; }
+.mata60-course .course-jump, .teaching-catalog .course-jump { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin: 1rem 0 1.6rem; font-size: .88em; }
+.mata60-course section, .mata60-course details, .teaching-catalog section { scroll-margin-top: 5rem; }
+.mata60-course .syllabus-box { border-left: 4px solid var(--course-accent); background: rgba(53,111,145,.07); padding: .8rem 1.1rem; margin: 1rem 0 1.6rem; }
+.mata60-course .syllabus-box h2 { margin-top: .2rem; }
+.mata60-course .course-note, .teaching-catalog .course-note { font-size: .84em; opacity: .82; }
+.mata60-course .course-metrics, .teaching-catalog .course-metrics { display: flex; flex-wrap: wrap; gap: .45rem 1.4rem; font-size: .9em; margin: .8rem 0 1.4rem; }
+.mata60-course .course-table-wrap { overflow-x: auto; margin-bottom: 1.2rem; }
+.mata60-course .course-outline { width: 100%; min-width: 25rem; border-collapse: collapse; font-size: .83em; }
+.mata60-course .course-outline td, .mata60-course .course-outline th { text-align: left; padding: .6rem; border-bottom: 1px solid var(--course-line); vertical-align: top; }
+.mata60-course .course-outline .number { text-align: center; }
+.mata60-course .course-module { border: 1px solid var(--course-line); border-radius: .35rem; margin: 1rem 0; padding: .8rem 1rem; }
+.mata60-course .course-module summary { cursor: pointer; font-weight: 600; line-height: 1.5; }
+.mata60-course .course-lessons { list-style: none; margin: .7rem 0 0; padding: 0; }
+.mata60-course .course-lesson { padding: 1rem 0; border-top: 1px solid var(--course-line); }
+.mata60-course .course-lesson h3 { font-size: 1em; margin: .1rem 0 .4rem; line-height: 1.5; }
+.mata60-course .course-lesson > p { margin: .4rem 0 .7rem; font-size: .9em; }
+.mata60-course .lesson-number { color: var(--course-accent); }
+.mata60-course .course-materials { list-style: none; padding: 0; margin: .6rem 0 0; }
+.mata60-course .course-materials li { margin: .4rem 0; }
+.mata60-course .course-materials a { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .25rem .75rem; padding: .5rem .65rem; border: 1px solid var(--course-line); border-radius: .25rem; font-size: .85em; text-decoration: none; }
+.mata60-course .course-materials a:hover, .mata60-course .course-materials a:focus-visible { border-color: var(--course-accent); text-decoration: underline; }
+.mata60-course .file-meta { font-size: .8em; white-space: nowrap; opacity: .82; }
+.mata60-course .project-card, .teaching-catalog .course-card { border: 1px solid var(--course-line); border-radius: .35rem; padding: 1rem 1.1rem; margin: 1rem 0; }
+.mata60-course .project-card h3, .teaching-catalog .course-card h3 { margin-top: .1rem; }
+.teaching-catalog .course-card p { margin: .7rem 0; }
+.mata60-course .download-caption { margin-top: 1rem; }
+@media (max-width: 600px) { .mata60-course .course-module { padding: .7rem; } .mata60-course .course-materials a { display: block; } .mata60-course .file-meta { display: block; margin-top: .25rem; } }
+.mata60-course .program-module { border: 1px solid var(--course-line); border-radius: .35rem; padding: .7rem .9rem; margin: .7rem 0; }
+.mata60-course .program-module summary { cursor: pointer; font-weight: 600; line-height: 1.5; }
+.mata60-course .program-module ul { padding-left: 1.2rem; margin: .8rem 0 .2rem; font-size: .9em; }
+.mata60-course .program-module li { margin: .45rem 0; }
+</style>
+
+<div class="mata60-course">
+  <p><a href="{{ '/teaching/#courses' | relative_url }}"><span lang="en" data-content-language="en">← Teaching / Courses</span><span lang="pt-BR" data-content-language="pt">← Ensino / Disciplinas</span></a></p>
+  <p data-no-translate>{{ course.institution | escape_once }}</p>
+  <p class="course-metrics"><span>{{ course.modules.size }} <span lang="en" data-content-language="en">modules</span><span lang="pt-BR" data-content-language="pt">módulos</span></span><span>{{ lesson_count }} <span lang="en" data-content-language="en">content lessons</span><span lang="pt-BR" data-content-language="pt">aulas de conteúdo</span></span><span>{{ course.assets.size }} <span data-no-translate>PDFs</span></span></p>
+  <nav class="course-jump" aria-label="Course sections">
+    <a href="#syllabus"><span lang="en" data-content-language="en">Syllabus</span><span lang="pt-BR" data-content-language="pt">Ementa</span></a>
+    <a href="#program"><span lang="en" data-content-language="en">Course programme</span><span lang="pt-BR" data-content-language="pt">Conteúdo programático</span></a>
+    <a href="#content-path"><span lang="en" data-content-language="en">Lesson pathway</span><span lang="pt-BR" data-content-language="pt">Trilha de aulas</span></a>
+    <a href="#projects"><span lang="en" data-content-language="en">Case studies</span><span lang="pt-BR" data-content-language="pt">Projetos</span></a>
+    <a href="#downloads"><span lang="en" data-content-language="en">All PDFs</span><span lang="pt-BR" data-content-language="pt">Todos os PDFs</span></a>
+  </nav>
+  <section id="syllabus" class="syllabus-box">
+    <h2><span lang="en" data-content-language="en">Syllabus</span><span lang="pt-BR" data-content-language="pt">Ementa</span></h2>
+    <p><span lang="en" data-content-language="en">{{ course.syllabus_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ course.syllabus_pt | escape_once }}</span></p>
+    {% if course.syllabus_kind == 'content_summary' %}<p class="course-note"><span lang="en" data-content-language="en">Thematic summary of the content pathway.</span><span lang="pt-BR" data-content-language="pt">Síntese temática da trilha de conteúdos.</span></p>{% endif %}
+    {% if course.official_syllabus_url != '' and course.official_syllabus_url %}<p><a href="{{ course.official_syllabus_url | relative_url }}" download><span lang="en" data-content-language="en">Download the official syllabus (PDF)</span><span lang="pt-BR" data-content-language="pt">Baixar o plano de ensino (PDF)</span></a></p>{% endif %}
+  </section>
+
+  <section id="program">
+    <h2><span lang="en" data-content-language="en">Course programme</span><span lang="pt-BR" data-content-language="pt">Conteúdo programático</span></h2>
+    <p><span lang="en" data-content-language="en">Modules and topics from the teaching plan. Expand each module to view its contents.</span><span lang="pt-BR" data-content-language="pt">Módulos e tópicos do plano de ensino. Abra cada módulo para consultar os conteúdos.</span></p>
+    {% for module in course.program_modules %}
+    <details class="program-module" id="program-{{ module.number | downcase }}">
+      <summary><span data-no-translate>{{ module.number }}.</span> <span lang="en" data-content-language="en">{{ module.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ module.title_pt | escape_once }}</span></summary>
+      <ul>{% for topic in module.topics %}<li><span lang="en" data-content-language="en">{{ topic.en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ topic.pt | escape_once }}</span></li>{% endfor %}</ul>
+    </details>
+    {% endfor %}
+  </section>
+
+  <section id="content-path">
+    <h2><span lang="en" data-content-language="en">Lesson pathway</span><span lang="pt-BR" data-content-language="pt">Trilha de aulas</span></h2>
+    <p><span lang="en" data-content-language="en">The content lessons follow the teaching sequence and are grouped by subject.</span><span lang="pt-BR" data-content-language="pt">As aulas de conteúdo seguem a sequência do roteiro e estão agrupadas por assunto.</span></p>
+    <div class="course-table-wrap"><table class="course-outline">
+      <thead><tr><th><span lang="en" data-content-language="en">Block</span><span lang="pt-BR" data-content-language="pt">Bloco</span></th><th><span lang="en" data-content-language="en">Topics</span><span lang="pt-BR" data-content-language="pt">Temas</span></th><th class="number"><span lang="en" data-content-language="en">Lessons</span><span lang="pt-BR" data-content-language="pt">Aulas</span></th></tr></thead>
+      <tbody>{% for module in course.modules %}<tr><td><a href="#module-{{ module.id | escape_once }}"><span data-no-translate>{{ module.number }}.</span> <span lang="en" data-content-language="en">{{ module.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ module.title_pt | escape_once }}</span></a></td><td><span lang="en" data-content-language="en">{{ module.summary_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ module.summary_pt | escape_once }}</span></td><td class="number">{{ module.lessons.size }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+
+    {% for module in course.modules %}
+    <details class="course-module" id="module-{{ module.id | escape_once }}" open>
+      <summary><span data-no-translate>{{ module.number }}.</span> <span lang="en" data-content-language="en">{{ module.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ module.title_pt | escape_once }}</span></summary>
+      <ol class="course-lessons">
+      {% for lesson in module.lessons %}
+        <li class="course-lesson" id="lesson-{{ lesson.number }}">
+          <h3><span class="lesson-number"><span lang="en" data-content-language="en">Lesson</span><span lang="pt-BR" data-content-language="pt">Aula</span> {{ lesson.number }}</span> — <span lang="en" data-content-language="en">{{ lesson.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ lesson.title_pt | escape_once }}</span></h3>
+          <p><span lang="en" data-content-language="en">{{ lesson.summary_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ lesson.summary_pt | escape_once }}</span></p>
+          {% if lesson.materials.size > 0 %}
+          <ul class="course-materials">{% for asset_id in lesson.materials %}{% assign asset = course.assets[asset_id] %}{% if asset %}<li><a href="{{ asset.url | relative_url }}" download="{{ asset.filename | escape_once }}"><span><span lang="en" data-content-language="en">{{ asset.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ asset.title_pt | escape_once }}</span></span><span class="file-meta"><span lang="en" data-content-language="en">{{ asset.kind_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ asset.kind_pt | escape_once }}</span> · <span data-no-translate>PDF · {{ asset.pages }} p. · {{ asset.size_mb }} MB ↓</span></span></a></li>{% endif %}{% endfor %}</ul>
+          {% else %}<p class="course-note"><span lang="en" data-content-language="en">Materials to be added.</span><span lang="pt-BR" data-content-language="pt">Material a disponibilizar.</span></p>{% endif %}
+        </li>
+      {% endfor %}
+      </ol>
+    </details>
+    {% endfor %}
+  </section>
+
+  <section id="projects">
+    <h2><span lang="en" data-content-language="en">Case studies</span><span lang="pt-BR" data-content-language="pt">Projetos</span></h2>
+    <p><span lang="en" data-content-language="en">Applied cases for modelling, implementation and query practice.</span><span lang="pt-BR" data-content-language="pt">Casos para trabalhar modelagem, implementação e consultas.</span></p>
+    {% for project in course.projects %}<article class="project-card"><h3 data-no-translate>{{ project.name | escape_once }}</h3><p><span lang="en" data-content-language="en">{{ project.summary_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ project.summary_pt | escape_once }}</span></p><ul class="course-materials">{% assign asset = course.assets[project.asset] %}{% if asset %}<li><a href="{{ asset.url | relative_url }}" download="{{ asset.filename | escape_once }}"><span><span lang="en" data-content-language="en">{{ asset.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ asset.title_pt | escape_once }}</span></span><span class="file-meta"><span lang="en" data-content-language="en">{{ asset.kind_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ asset.kind_pt | escape_once }}</span> · <span data-no-translate>PDF · {{ asset.pages }} p. · {{ asset.size_mb }} MB ↓</span></span></a></li>{% endif %}</ul></article>{% endfor %}
+  </section>
+
+  <section id="downloads">
+    <h2><span lang="en" data-content-language="en">All PDFs</span><span lang="pt-BR" data-content-language="pt">Todos os PDFs</span></h2>
+    <p><span lang="en" data-content-language="en">Slides, case studies, practical handouts and supporting guidance.</span><span lang="pt-BR" data-content-language="pt">Slides, projetos, roteiros de prática e orientações de apoio.</span></p>
+    <ul class="course-materials">{% for asset_pair in course.assets %}{% assign asset = asset_pair[1] %}{% if asset %}<li><a href="{{ asset.url | relative_url }}" download="{{ asset.filename | escape_once }}"><span><span lang="en" data-content-language="en">{{ asset.title_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ asset.title_pt | escape_once }}</span></span><span class="file-meta"><span lang="en" data-content-language="en">{{ asset.kind_en | escape_once }}</span><span lang="pt-BR" data-content-language="pt">{{ asset.kind_pt | escape_once }}</span> · <span data-no-translate>PDF · {{ asset.pages }} p. · {{ asset.size_mb }} MB ↓</span></span></a></li>{% endif %}{% endfor %}</ul>
+  </section>
+</div>
+<script>
+(function () {
+  var course = document.querySelector('.mata60-course');
+  if (!course) return;
+  function reveal(hash) {
+    if (!hash || hash.indexOf('#module-') !== 0) return;
+    var target = document.getElementById(hash.slice(1));
+    if (target && course.contains(target) && target.tagName === 'DETAILS') target.open = true;
+  }
+  course.querySelectorAll('a[href^="#module-"]').forEach(function (link) {
+    link.addEventListener('click', function () { reveal(link.hash); });
+  });
+  window.addEventListener('hashchange', function () { reveal(window.location.hash); });
+  reveal(window.location.hash);
+}());
+</script>
