@@ -1,0 +1,506 @@
+# Official syllabus and programme from the supplied teaching plan; lesson sequence from SIGAA.
+code: MATA60
+title_pt: Bancos de Dados
+title_en: Database Systems
+institution: Universidade Federal da Bahia (UFBA)
+syllabus_pt: Arquitetura geral de um SGBD. Modelo de Entidades e Relacionamentos (ER) e suas extensões. O modelo
+  relacional. Mapeamento de um projeto ER em um projeto relacional. Linguagem de definição e manipulação de dados.
+  Álgebra e cálculo relacional. Mapeamento de consultas em álgebra e cálculo relacional em SQL. Normalização. Mecanismo
+  de otimização de consultas. Introdução aos modelos de rede, hierárquico e orientado a objetos. Projeto físico
+  de banco de dados. Gerenciamento de transações e controle de concorrência. Mecanismos de recuperação de falhas.
+  Introdução a banco de dados não-relacionais.
+syllabus_en: General DBMS architecture. The entity–relationship (ER) model and its extensions. The relational model.
+  Mapping an ER design into a relational design. Data definition and manipulation languages. Relational algebra
+  and calculus. Mapping relational algebra and calculus queries into SQL. Normalisation. Query optimisation mechanisms.
+  Introduction to network, hierarchical and object-oriented models. Physical database design. Transaction management
+  and concurrency control. Failure recovery mechanisms. Introduction to non-relational databases.
+syllabus_kind: official
+official_syllabus_url: /files/teaching/mata60/plano-de-ensino-mata60.pdf
+modules:
+- id: fundamentos
+  number: I
+  title_pt: Fundamentos e ambiente de banco de dados
+  title_en: Database foundations and environment
+  summary_pt: Conceitos, SGBDs, arquiteturas, linguagens e modelos.
+  summary_en: Concepts, DBMSs, architectures, languages and models.
+  lessons:
+  - number: 1
+    title_pt: Introdução aos sistemas de banco de dados
+    title_en: Introduction to database systems
+    summary_pt: Dados, bancos de dados e SGBDs; arquiteturas e linguagens.
+    summary_en: Data, databases and DBMSs; architectures and languages.
+    materials:
+    - fundamentos
+  - number: 2
+    title_pt: Primeiro contato com um SGBD
+    title_en: First steps with a DBMS
+    summary_pt: Exploração de um ambiente de banco de dados e de suas operações básicas.
+    summary_en: Exploring a database environment and its basic operations.
+    materials:
+    - fundamentos
+    - empresa
+  - number: 3
+    title_pt: Modelos de dados
+    title_en: Data models
+    summary_pt: Modelos de representação e níveis de abstração para organizar dados.
+    summary_en: Representation models and abstraction levels for organising data.
+    materials:
+    - fundamentos
+- id: modelagem
+  number: II
+  title_pt: Modelagem e definição de esquemas
+  title_en: Modelling and schema definition
+  summary_pt: Modelos ER e relacional, mapeamento, dependências e SQL-DDL.
+  summary_en: ER and relational models, mapping, dependencies and SQL-DDL.
+  lessons:
+  - number: 4
+    title_pt: Modelo Entidade-Relacionamento I
+    title_en: Entity–relationship model I
+    summary_pt: Entidades, atributos, identificadores e relacionamentos.
+    summary_en: Entities, attributes, identifiers and relationships.
+    materials:
+    - mer
+    - compraesperta
+  - number: 5
+    title_pt: Modelo Entidade-Relacionamento II
+    title_en: Entity–relationship model II
+    summary_pt: Papéis, cardinalidade, participação e regras do domínio.
+    summary_en: Roles, cardinality, participation and domain rules.
+    materials:
+    - mer
+    - compraesperta
+    - empresa
+  - number: 6
+    title_pt: Modelo relacional
+    title_en: The relational model
+    summary_pt: Relações, tuplas, atributos, esquemas e chaves.
+    summary_en: Relations, tuples, attributes, schemas and keys.
+    materials:
+    - relacional
+  - number: 7
+    title_pt: Mapeamento ER → relacional
+    title_en: ER-to-relational mapping
+    summary_pt: Tradução da modelagem conceitual para esquemas e restrições relacionais.
+    summary_en: Translating conceptual models into relational schemas and constraints.
+    materials:
+    - restricoes
+    - relacional
+    - empresa
+  - number: 8
+    title_pt: Problemas de projeto e dependências funcionais
+    title_en: Design problems and functional dependencies
+    summary_pt: Consistência do projeto, dependências funcionais e refinamento de esquemas.
+    summary_en: Design consistency, functional dependencies and schema refinement.
+    materials:
+    - restricoes
+    - eventos
+  - number: 9
+    title_pt: 'SQL: definição de dados I'
+    title_en: 'SQL: data definition I'
+    summary_pt: Criação de tabelas, tipos, chaves e restrições de integridade.
+    summary_en: Creating tables, data types, keys and integrity constraints.
+    materials:
+    - ddl
+    - sql-portavel
+  - number: 10
+    title_pt: 'SQL: definição de dados II e prática'
+    title_en: 'SQL: data definition II and practice'
+    summary_pt: Alteração de esquemas e implantação do banco de dados EMPRESA.
+    summary_en: Schema changes and implementation of the EMPRESA database.
+    materials:
+    - ddl
+    - empresa
+    - fisico
+- id: consultas
+  number: III
+  title_pt: Normalização e linguagens de consulta
+  title_en: Normalisation and query languages
+  summary_pt: Normalização, álgebra relacional e SQL para consultas.
+  summary_en: Normalisation, relational algebra and SQL queries.
+  lessons:
+  - number: 11
+    title_pt: Normalização I
+    title_en: Normalisation I
+    summary_pt: Dependências e fundamentos da organização de esquemas normalizados.
+    summary_en: Dependencies and the foundations of normalised schema design.
+    materials:
+    - eventos
+  - number: 12
+    title_pt: Normalização II
+    title_en: Normalisation II
+    summary_pt: Formas normais, decomposição e refinamento do projeto relacional.
+    summary_en: Normal forms, decomposition and refinement of relational designs.
+    materials:
+    - sciencereview
+    - fomentapesquisa
+  - number: 13
+    title_pt: Laboratório de normalização
+    title_en: Normalisation lab
+    summary_pt: Aplicação dos conceitos de normalização aos estudos de caso.
+    summary_en: Applying normalisation concepts to the case studies.
+    materials:
+    - eventos
+    - sciencereview
+    - fomentapesquisa
+  - number: 14
+    title_pt: Álgebra relacional
+    title_en: Relational algebra
+    summary_pt: Operadores e composição de consultas sobre relações.
+    summary_en: Operators and query composition over relations.
+    materials:
+    - relacional
+  - number: 15
+    title_pt: Da álgebra relacional ao SQL
+    title_en: From relational algebra to SQL
+    summary_pt: Expressão de consultas relacionais por meio da linguagem SQL.
+    summary_en: Expressing relational queries using SQL.
+    materials:
+    - relacional
+    - consultas
+  - number: 16
+    title_pt: 'SQL: consultas básicas'
+    title_en: 'SQL: basic queries'
+    summary_pt: Seleção de atributos, condições de filtragem e ordenação de resultados.
+    summary_en: Selecting attributes, filtering conditions and ordering results.
+    materials:
+    - consultas
+    - empresa
+  - number: 17
+    title_pt: 'SQL: relacionando tabelas'
+    title_en: 'SQL: combining tables'
+    summary_pt: Consultas que combinam informações de diferentes relações.
+    summary_en: Queries combining information from different relations.
+    materials:
+    - empresa
+    - eventos
+    - consultas-avancadas
+  - number: 18
+    title_pt: 'SQL: agregação'
+    title_en: 'SQL: aggregation'
+    summary_pt: Funções de agregação, agrupamento e consultas por grupos.
+    summary_en: Aggregate functions, grouping and grouped queries.
+    materials:
+    - empresa
+    - sciencereview
+    - consultas-avancadas
+  - number: 19
+    title_pt: Laboratório SQL
+    title_en: SQL lab
+    summary_pt: Construção de consultas para os esquemas e casos trabalhados na disciplina.
+    summary_en: Building queries for the schemas and cases used in the course.
+    materials:
+    - empresa
+    - sql-portavel
+    - eventos
+    - consultas-avancadas
+- id: operacao
+  number: IV
+  title_pt: Transações, organização física e desempenho
+  title_en: Transactions, physical organisation and performance
+  summary_pt: Concorrência, índices, transações e aperfeiçoamento de consultas.
+  summary_en: Concurrency, indexes, transactions and query improvement.
+  lessons:
+  - number: 20
+    title_pt: Transações e concorrência
+    title_en: Transactions and concurrency
+    summary_pt: Conceito de transação, propriedades ACID e controle de concorrência.
+    summary_en: The transaction concept, ACID properties and concurrency control.
+    materials:
+    - empresa
+    - restricoes
+    - transacoes
+  - number: 21
+    title_pt: Laboratório de transações
+    title_en: Transactions lab
+    summary_pt: Experimentos com BEGIN, COMMIT e ROLLBACK, isolamento e acesso concorrente.
+    summary_en: Experiments with BEGIN, COMMIT and ROLLBACK, isolation and concurrent access.
+    materials:
+    - empresa
+    - lab-transacoes
+    - transacoes
+  - number: 22
+    title_pt: Índices e organização física
+    title_en: Indexes and physical organisation
+    summary_pt: Hierarquia de armazenamento, organização física, índices ordenados, árvores B+, hash e bitmap.
+    summary_en: Storage hierarchy, physical organisation, ordered indexes, B+ trees, hash and bitmap.
+    materials:
+    - fisico
+    - indexacao
+    - indexacao-btree
+  - number: 23
+    title_pt: Laboratório de desempenho e integração
+    title_en: Performance and integration lab
+    summary_pt: Análise e aperfeiçoamento das consultas e da implementação dos estudos de caso.
+    summary_en: Analysing and improving case-study queries and implementations.
+    materials:
+    - eventos
+    - sciencereview
+    - fomentapesquisa
+    - indexacao
+    - indexacao-btree
+- id: emergentes
+  number: V
+  title_pt: Sistemas emergentes
+  title_en: Emerging systems
+  summary_pt: Big Data e sistemas baseados em vetores.
+  summary_en: Big Data and vector-based systems.
+  lessons:
+  - number: 24
+    title_pt: 'Sistemas emergentes: Big Data e bases vetoriais'
+    title_en: 'Emerging systems: Big Data and vector databases'
+    summary_pt: Introdução a modelos e sistemas para novos cenários de representação e integração de dados.
+    summary_en: Introduction to models and systems for new data representation and integration scenarios.
+    materials:
+    - fundamentos
+projects:
+- asset: eventos
+  name: EventOS
+  summary_pt: Gestão de eventos científicos, incluindo participantes, inscrições, atividades, pagamentos e certificados.
+  summary_en: Scientific event management, including participants, registrations, activities, payments and certificates.
+- asset: sciencereview
+  name: ScienceReview
+  summary_pt: Gestão de submissões e revisão por pares, com trilhas, autores, revisores e conflitos de interesse.
+  summary_en: Submission and peer-review management, including tracks, authors, reviewers and conflicts of interest.
+- asset: fomentapesquisa
+  name: FomentaPesquisa
+  summary_pt: 'Gestão do financiamento à pesquisa: chamadas, propostas, contratação, execução e prestação de contas.'
+  summary_en: 'Research funding management: calls, proposals, contracting, execution and financial reporting.'
+assets:
+  fundamentos:
+    title_pt: Fundamentos de SGBDs e modelos de dados
+    title_en: DBMS fundamentals and data models
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/fundamentos-e-modelos.pdf
+    filename: fundamentos-e-modelos.pdf
+    pages: 44
+    size_mb: '1.08'
+  mer:
+    title_pt: Modelagem entidade-relacionamento
+    title_en: Entity–relationship modelling
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/modelo-entidade-relacionamento.pdf
+    filename: modelo-entidade-relacionamento.pdf
+    pages: 19
+    size_mb: '1.64'
+  relacional:
+    title_pt: Introdução ao modelo relacional
+    title_en: Introduction to the relational model
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/modelo-relacional.pdf
+    filename: modelo-relacional.pdf
+    pages: 27
+    size_mb: '3.78'
+  restricoes:
+    title_pt: Restrições e mapeamento ER–relacional
+    title_en: Constraints and ER-to-relational mapping
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/restricoes-e-mapeamento-er-relacional.pdf
+    filename: restricoes-e-mapeamento-er-relacional.pdf
+    pages: 26
+    size_mb: '0.92'
+  ddl:
+    title_pt: 'SQL: definição de dados (DDL)'
+    title_en: 'SQL: data definition (DDL)'
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/sql-ddl.pdf
+    filename: sql-ddl.pdf
+    pages: 6
+    size_mb: '0.25'
+  consultas:
+    title_pt: 'SQL: consultas básicas'
+    title_en: 'SQL: basic queries'
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/sql-consultas-basicas.pdf
+    filename: sql-consultas-basicas.pdf
+    pages: 22
+    size_mb: '0.73'
+  empresa:
+    title_pt: Prática de banco de dados EMPRESA
+    title_en: EMPRESA database practice
+    kind_pt: Prática
+    kind_en: Practice
+    url: /files/teaching/mata60/pratica-empresa.pdf
+    filename: pratica-empresa.pdf
+    pages: 33
+    size_mb: '1.77'
+  compraesperta:
+    title_pt: 'Roteiro de modelagem: CompraEsperta'
+    title_en: 'Modelling practice: CompraEsperta'
+    kind_pt: Prática
+    kind_en: Practice
+    url: /files/teaching/mata60/roteiro-compraesperta.pdf
+    filename: roteiro-compraesperta.pdf
+    pages: 5
+    size_mb: '0.22'
+  eventos:
+    title_pt: Projeto EventOS
+    title_en: EventOS case study
+    kind_pt: Projeto
+    kind_en: Case study
+    url: /files/teaching/mata60/projeto-eventos.pdf
+    filename: projeto-eventos.pdf
+    pages: 28
+    size_mb: '0.94'
+  sciencereview:
+    title_pt: Projeto ScienceReview
+    title_en: ScienceReview case study
+    kind_pt: Projeto
+    kind_en: Case study
+    url: /files/teaching/mata60/projeto-sciencereview.pdf
+    filename: projeto-sciencereview.pdf
+    pages: 28
+    size_mb: '0.47'
+  fomentapesquisa:
+    title_pt: Projeto FomentaPesquisa
+    title_en: FomentaPesquisa case study
+    kind_pt: Projeto
+    kind_en: Case study
+    url: /files/teaching/mata60/projeto-fomentapesquisa.pdf
+    filename: projeto-fomentapesquisa.pdf
+    pages: 44
+    size_mb: '0.57'
+  sql-portavel:
+    title_pt: Recursos SQL não permitidos no projeto
+    title_en: SQL features not permitted in the project
+    kind_pt: Orientações
+    kind_en: Guidelines
+    url: /files/teaching/mata60/recursos-nao-permitidos-sql.pdf
+    filename: recursos-nao-permitidos-sql.pdf
+    pages: 7
+    size_mb: '0.26'
+  fisico:
+    title_pt: Modelagem física e estruturas de armazenamento
+    title_en: Physical modelling and storage structures
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/modelagem-fisica-armazenamento.pdf
+    filename: modelagem-fisica-armazenamento.pdf
+    pages: 17
+    size_mb: '0.85'
+  consultas-avancadas:
+    title_pt: 'SQL: consultas avançadas'
+    title_en: 'SQL: advanced queries'
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/sql-consultas-avancadas.pdf
+    filename: sql-consultas-avancadas.pdf
+    pages: 34
+    size_mb: '1.30'
+  indexacao:
+    title_pt: 'Indexação: índices ordenados, primários e secundários'
+    title_en: 'Indexing: ordered, primary and secondary indexes'
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/indexacao-parte-1.pdf
+    filename: indexacao-parte-1.pdf
+    pages: 22
+    size_mb: '1.61'
+  indexacao-btree:
+    title_pt: 'Indexação: árvores B+, hash e bitmap'
+    title_en: 'Indexing: B+ trees, hash and bitmap'
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/indexacao-btree-hash-bitmap.pdf
+    filename: indexacao-btree-hash-bitmap.pdf
+    pages: 23
+    size_mb: '0.65'
+  transacoes:
+    title_pt: Processamento de transações
+    title_en: Transaction processing
+    kind_pt: Slides
+    kind_en: Slides
+    url: /files/teaching/mata60/processamento-transacoes.pdf
+    filename: processamento-transacoes.pdf
+    pages: 20
+    size_mb: '1.45'
+  lab-transacoes:
+    title_pt: Laboratório de transações
+    title_en: Transactions lab
+    kind_pt: Laboratório
+    kind_en: Lab
+    url: /files/teaching/mata60/laboratorio-transacoes.pdf
+    filename: laboratorio-transacoes.pdf
+    pages: 16
+    size_mb: '0.16'
+  plano-ensino:
+    title_pt: Plano de ensino de MATA60
+    title_en: MATA60 teaching plan
+    kind_pt: Plano de ensino
+    kind_en: Teaching plan
+    url: /files/teaching/mata60/plano-de-ensino-mata60.pdf
+    filename: plano-de-ensino-mata60.pdf
+    pages: 5
+    size_mb: '0.21'
+program_modules:
+- number: I
+  title_pt: Introdução aos Sistemas de Banco de Dados
+  title_en: Introduction to Database Systems
+  topics:
+  - pt: Aplicações e conceitos fundamentais de bancos de dados
+    en: Database applications and fundamental concepts
+  - pt: 'Sistemas Gerenciadores de Bancos de Dados: arquiteturas, usuários e linguagens'
+    en: 'Database management systems: architectures, users and languages'
+  - pt: Introdução aos modelos de dados
+    en: Introduction to data models
+- number: II
+  title_pt: Modelagem e Projeto de Bancos de Dados
+  title_en: Database Modelling and Design
+  topics:
+  - pt: Modelos de dados e níveis de abstração
+    en: Data models and abstraction levels
+  - pt: Modelo Entidade-Relacionamento (MER)
+    en: Entity–relationship model (ER)
+  - pt: Restrições de integridade e modelagem
+    en: Integrity constraints and modelling
+  - pt: Modelo Relacional (MR)
+    en: Relational model
+  - pt: Mapeamento do Modelo Entidade-Relacionamento para o Modelo Relacional
+    en: Mapping the entity–relationship model to the relational model
+  - pt: Redundância e anomalias em esquemas relacionais
+    en: Redundancy and anomalies in relational schemas
+  - pt: Dependências funcionais
+    en: Functional dependencies
+  - pt: 'Normalização de dados: 1FN, 2FN, 3FN e BCNF'
+    en: 'Data normalisation: 1NF, 2NF, 3NF and BCNF'
+- number: III
+  title_pt: Linguagens de Bancos de Dados
+  title_en: Database Languages
+  topics:
+  - pt: Introdução à Álgebra Relacional
+    en: Introduction to relational algebra
+  - pt: Introdução ao Cálculo Relacional
+    en: Introduction to relational calculus
+  - pt: 'SQL: linguagem de definição de dados (DDL)'
+    en: 'SQL: data definition language (DDL)'
+  - pt: 'SQL: linguagem de manipulação e consulta de dados (DML)'
+    en: 'SQL: data manipulation and query language (DML)'
+  - pt: Consultas envolvendo junções, agregações, subconsultas e visões
+    en: Queries using joins, aggregates, subqueries and views
+- number: IV
+  title_pt: Processamento de Consultas e Administração de Bancos de Dados
+  title_en: Query Processing and Database Administration
+  topics:
+  - pt: Organização física dos dados e indexação
+    en: Physical data organisation and indexing
+  - pt: Processamento e otimização de consultas
+    en: Query processing and optimisation
+  - pt: Transações
+    en: Transactions
+  - pt: Controle de concorrência e propriedades ACID
+    en: Concurrency control and ACID properties
+- number: V
+  title_pt: Introdução a Tópicos Contemporâneos em Bancos de Dados
+  title_en: Introduction to Contemporary Database Topics
+  topics:
+  - pt: Bancos de dados para grandes volumes de dados e sistemas distribuídos
+    en: Databases for large data volumes and distributed systems
+  - pt: Bancos de dados NoSQL e modelos não relacionais
+    en: NoSQL databases and non-relational models
+  - pt: Bancos de dados autoajustáveis e tendências em sistemas de gerenciamento de dados
+    en: Self-tuning databases and trends in data management systems
