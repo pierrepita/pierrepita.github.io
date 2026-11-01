@@ -311,3 +311,20 @@ venues:
   qualis_source_context: https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgcc/qualis
   qualis_status: not_found
   checked_on: '2026-10-22'
+- key: lancet-planetary-health
+  kind: journal
+  name: The Lancet Planetary Health
+  aliases:
+  - The Lancet Planetary Health
+  - Lancet Planetary Health
+  issn: 2542-5196
+  jif: '20.5'
+  jif_year: 2025
+  jif_source: https://www.ooir.org/j.php?issn=2542-5196
+  jif_status: verified
+  sjr_quartile: Q1
+  sjr_year: 2025
+  sjr_scope: best_quartile
+  sjr_source: https://www.akaturk.com/journals/21100858657?lang=en
+  checked_on: '2026-10-31'
+  verification_note: JIF reported by OOIR and akaturk; SCImago quartile reported by akaturk and JournalsBase. Secondary sources; publisher and SCImago pages were inaccessible.
