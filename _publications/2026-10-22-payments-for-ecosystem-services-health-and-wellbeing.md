@@ -143,7 +143,6 @@ source: PubMed / Europe PMC and publisher-deposited Crossref metadata
 
 <p><a href="https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(26)00105-1/fulltext">Read the article / Ler o artigo</a> · <a href="https://doi.org/10.1016/j.lanplh.2026.101532">DOI</a></p>
 
-<p><strong>SEDHI:</strong> <strong class="publication-author">Robespierre Pita</strong> — collaborator / colaborador.</p>
 
 <details>
   <summary>SEDHI collaborators / Colaboradores do SEDHI</summary>
